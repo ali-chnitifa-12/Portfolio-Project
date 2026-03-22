@@ -147,16 +147,16 @@ export default function AboutSection() {
 
                             {/* Impact/Stats Column */}
                             <div className="lg:col-span-4 grid grid-cols-1 sm:grid-cols-3 lg:flex lg:flex-col justify-center gap-6 md:gap-8 transform-style-3d parallax-depth-3">
-                                <div className="glass-fast p-6 md:p-10 rounded-2xl md:rounded-3xl border border-white/10 text-center space-y-2 group/stat hover:bg-white/5 transition-all duration-500 transform-style-3d hover:translate-z-20">
-                                    <p className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text drop-shadow-sm">99%</p>
+                                <div className="glass-fast p-4 sm:p-8 md:p-10 rounded-2xl md:rounded-3xl border border-white/10 text-center space-y-2 group/stat hover:bg-white/5 transition-all duration-500 transform-style-3d hover:translate-z-20">
+                                    <p className="text-2xl sm:text-4xl md:text-5xl font-bold gradient-text drop-shadow-sm">99%</p>
                                     <p className="text-[10px] md:text-xs text-gray-500 uppercase tracking-[0.2em] font-mono">Satisfaction Index</p>
                                 </div>
-                                <div className="glass-fast p-6 md:p-10 rounded-2xl md:rounded-3xl border border-white/10 text-center space-y-2 group/stat hover:bg-white/5 transition-all duration-500 transform-style-3d hover:translate-z-20">
-                                    <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-accent-cyan">ULTRA</p>
+                                <div className="glass-fast p-4 sm:p-8 md:p-10 rounded-2xl md:rounded-3xl border border-white/10 text-center space-y-2 group/stat hover:bg-white/5 transition-all duration-500 transform-style-3d hover:translate-z-20">
+                                    <p className="text-2xl sm:text-4xl md:text-5xl font-bold text-accent-cyan">ULTRA</p>
                                     <p className="text-[10px] md:text-xs text-gray-500 uppercase tracking-[0.2em] font-mono">Speed Operations</p>
                                 </div>
-                                <div className="glass-fast p-6 md:p-10 rounded-2xl md:rounded-3xl border border-white/10 text-center space-y-2 group/stat hover:bg-white/5 transition-all duration-500 transform-style-3d hover:translate-z-20">
-                                    <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-accent-cyan">GLOBAL</p>
+                                <div className="glass-fast p-4 sm:p-8 md:p-10 rounded-2xl md:rounded-3xl border border-white/10 text-center space-y-2 group/stat hover:bg-white/5 transition-all duration-500 transform-style-3d hover:translate-z-20">
+                                    <p className="text-2xl sm:text-4xl md:text-5xl font-bold text-accent-purple">GLOBAL</p>
                                     <p className="text-[10px] md:text-xs text-gray-500 uppercase tracking-[0.2em] font-mono">Service Reach</p>
                                 </div>
                             </div>
