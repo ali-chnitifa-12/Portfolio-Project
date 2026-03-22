@@ -96,16 +96,16 @@ export default function Navbar() {
 
             {/* Mobile Menu */}
             <div
-                className={`md:hidden glass-strong overflow-hidden transition-all duration-500 ease-in-out ${isMobileOpen ? "max-h-[500px] opacity-100 mt-2" : "max-h-0 opacity-0"
+                className={`md:hidden bg-black/80 backdrop-blur-2xl border-b border-white/5 overflow-hidden transition-all duration-500 ease-in-out ${isMobileOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
                     }`}
             >
-                <div className="p-6 flex flex-col gap-5">
+                <div className="p-8 flex flex-col gap-6 items-center">
                     {navLinks.map((link) => (
                         <a
                             key={link.href}
                             href={link.href}
                             onClick={(e) => handleClick(e, link.href)}
-                            className="text-gray-300 hover:text-white transition-colors text-lg"
+                            className="text-gray-300 hover:text-accent-cyan transition-colors text-xl font-medium tracking-wide"
                         >
                             {link.label}
                         </a>

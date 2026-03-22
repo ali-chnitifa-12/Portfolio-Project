@@ -89,18 +89,18 @@ export default function AboutSection() {
             <div ref={containerRef} className="max-w-7xl mx-auto w-full transform-style-3d will-change-transform">
                 
                 {/* Title Section */}
-                <div ref={titleRef} className="text-center mb-24 transform-style-3d text-white">
-                    <h2 className="text-5xl md:text-7xl font-bold font-[family-name:var(--font-space-grotesk)] mb-6 drop-shadow-[0_0_20px_rgba(14,165,233,0.5)]">
+                <div ref={titleRef} className="text-center mb-16 md:mb-24 transform-style-3d text-white px-6">
+                    <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold font-[family-name:var(--font-space-grotesk)] mb-6 drop-shadow-[0_0_20px_rgba(14,165,233,0.5)]">
                         Vision & <span className="gradient-text">Identity</span>
                     </h2>
-                    <div className="w-24 h-1.5 bg-gradient-to-r from-accent-cyan via-accent-purple to-pink-500 mx-auto rounded-full shadow-[0_0_20px_rgba(14,165,233,0.6)]" />
+                    <div className="w-20 sm:w-24 h-1 sm:h-1.5 bg-gradient-to-r from-accent-cyan via-accent-purple to-pink-500 mx-auto rounded-full shadow-[0_0_20px_rgba(14,165,233,0.6)]" />
                 </div>
 
                 <div className="max-w-5xl mx-auto transform-style-3d px-6">
                     {/* Immersive Bio Card */}
                     <div 
                         ref={bioCardRef} 
-                        className="glass-strong rounded-[3rem] p-12 md:p-20 relative overflow-hidden group shadow-2xl border border-white/20 transform-style-3d transition-all duration-700 hover:border-accent-cyan/40"
+                        className="glass-strong rounded-[2rem] md:rounded-[3rem] p-8 md:p-20 relative overflow-hidden group shadow-2xl border border-white/20 transform-style-3d transition-all duration-700 hover:border-accent-cyan/40"
                     >
                         {/* Background Aura Layers */}
                         <div className="absolute top-[-20%] right-[-20%] w-[60%] h-[60%] bg-accent-cyan/10 rounded-full blur-[120px] pointer-events-none parallax-depth-1" />
@@ -111,7 +111,7 @@ export default function AboutSection() {
                             {/* Main Narrative Column */}
                             <div className="lg:col-span-8 space-y-10 transform-style-3d parallax-depth-2">
                                 <div className="space-y-4 transform-style-3d">
-                                    <h3 className="text-4xl md:text-6xl font-bold font-[family-name:var(--font-space-grotesk)] leading-tight text-white">
+                                    <h3 className="text-3xl sm:text-4xl md:text-6xl font-bold font-[family-name:var(--font-space-grotesk)] leading-tight text-white">
                                         Crafting the <span className="gradient-text">Digital Nexus</span>
                                     </h3>
                                     <div className="flex items-center gap-4">
@@ -146,18 +146,18 @@ export default function AboutSection() {
                             </div>
 
                             {/* Impact/Stats Column */}
-                            <div className="lg:col-span-4 flex flex-col justify-center gap-8 transform-style-3d parallax-depth-3">
-                                <div className="glass-fast p-10 rounded-3xl border border-white/10 text-center space-y-2 group/stat hover:bg-white/5 transition-all duration-500 transform-style-3d hover:translate-z-20">
-                                    <p className="text-5xl font-bold gradient-text drop-shadow-sm">99%</p>
-                                    <p className="text-xs text-gray-500 uppercase tracking-[0.2em] font-mono">Satisfaction Index</p>
+                            <div className="lg:col-span-4 grid grid-cols-1 sm:grid-cols-3 lg:flex lg:flex-col justify-center gap-6 md:gap-8 transform-style-3d parallax-depth-3">
+                                <div className="glass-fast p-6 md:p-10 rounded-2xl md:rounded-3xl border border-white/10 text-center space-y-2 group/stat hover:bg-white/5 transition-all duration-500 transform-style-3d hover:translate-z-20">
+                                    <p className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text drop-shadow-sm">99%</p>
+                                    <p className="text-[10px] md:text-xs text-gray-500 uppercase tracking-[0.2em] font-mono">Satisfaction Index</p>
                                 </div>
-                                <div className="glass-fast p-10 rounded-3xl border border-white/10 text-center space-y-2 group/stat hover:bg-white/5 transition-all duration-500 transform-style-3d hover:translate-z-20">
-                                    <p className="text-5xl font-bold text-accent-cyan">ULTRA</p>
-                                    <p className="text-xs text-gray-500 uppercase tracking-[0.2em] font-mono">Speed Operations</p>
+                                <div className="glass-fast p-6 md:p-10 rounded-2xl md:rounded-3xl border border-white/10 text-center space-y-2 group/stat hover:bg-white/5 transition-all duration-500 transform-style-3d hover:translate-z-20">
+                                    <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-accent-cyan">ULTRA</p>
+                                    <p className="text-[10px] md:text-xs text-gray-500 uppercase tracking-[0.2em] font-mono">Speed Operations</p>
                                 </div>
-                                <div className="glass-fast p-10 rounded-3xl border border-white/10 text-center space-y-2 group/stat hover:bg-white/5 transition-all duration-500 transform-style-3d hover:translate-z-20">
-                                    <p className="text-5xl font-bold text-accent-purple">GLOBAL</p>
-                                    <p className="text-xs text-gray-500 uppercase tracking-[0.2em] font-mono">Service Reach</p>
+                                <div className="glass-fast p-6 md:p-10 rounded-2xl md:rounded-3xl border border-white/10 text-center space-y-2 group/stat hover:bg-white/5 transition-all duration-500 transform-style-3d hover:translate-z-20">
+                                    <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-accent-cyan">GLOBAL</p>
+                                    <p className="text-[10px] md:text-xs text-gray-500 uppercase tracking-[0.2em] font-mono">Service Reach</p>
                                 </div>
                             </div>
                         </div>

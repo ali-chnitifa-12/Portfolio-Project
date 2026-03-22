@@ -157,7 +157,7 @@ export default function ProjectsSection() {
             </div>
 
             {/* 3D Carousel Container */}
-            <div className="relative w-full max-w-md h-[450px] mt-10 perspective-[2500px]">
+            <div className="relative w-full max-w-[85vw] sm:max-w-md h-[400px] sm:h-[450px] mt-10 perspective-[2500px]">
                 <div ref={carouselRef} className="absolute inset-0 flex items-center justify-center transform-style-3d will-change-transform">
                     {projects.map((project, i) => (
                         <div

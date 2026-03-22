@@ -136,15 +136,15 @@ export default function SkillsSection() {
                             />
 
                             {/* Extreme Icon Container Section */}
-                            <div className="relative mt-4 transform-style-3d h-40 flex items-center justify-center w-full" style={{ transform: "translateZ(80px)" }}>
+                            <div className="relative mt-4 transform-style-3d h-32 sm:h-40 flex items-center justify-center w-full" style={{ transform: "translateZ(80px)" }}>
                                 
                                 {/* Orbital Rings */}
-                                <div className="absolute w-32 h-32 rounded-full border border-accent-cyan/10 group-hover:border-accent-cyan/30 animate-[spin_10s_linear_infinite] opacity-40" />
-                                <div className="absolute w-36 h-36 rounded-full border-t border-accent-purple/20 group-hover:animate-[spin_15s_linear_infinite_reverse] opacity-30" style={{ transform: "rotateX(60deg)" }} />
-                                <div className="absolute w-40 h-40 rounded-full border-b border-pink-500/10 group-hover:animate-[spin_20s_linear_infinite] opacity-20" style={{ transform: "rotateY(70deg)" }} />
+                                <div className="absolute w-24 h-24 sm:w-32 sm:h-32 rounded-full border border-accent-cyan/10 group-hover:border-accent-cyan/30 animate-[spin_10s_linear_infinite] opacity-40" />
+                                <div className="absolute w-28 h-28 sm:w-36 sm:h-36 rounded-full border-t border-accent-purple/20 group-hover:animate-[spin_15s_linear_infinite_reverse] opacity-30" style={{ transform: "rotateX(60deg)" }} />
+                                <div className="absolute w-32 h-32 sm:w-40 sm:h-40 rounded-full border-b border-pink-500/10 group-hover:animate-[spin_20s_linear_infinite] opacity-20" style={{ transform: "rotateY(70deg)" }} />
 
                                 {/* THE HEXAGON CORE */}
-                                <div className="relative w-28 h-28 transform-style-3d group-hover:scale-110 transition-transform duration-700">
+                                <div className="relative w-20 h-20 sm:w-28 sm:h-28 transform-style-3d group-hover:scale-110 transition-transform duration-700">
                                     {/* Pulse Aura */}
                                     <div 
                                         className="absolute inset-0 animate-pulse-glow rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity"
@@ -172,7 +172,7 @@ export default function SkillsSection() {
 
                                     {/* The Actual Icon */}
                                     <div 
-                                        className="absolute inset-0 flex items-center justify-center text-5xl transition-all duration-700 group-hover:rotate-[360deg] z-10"
+                                        className="absolute inset-0 flex items-center justify-center text-3xl sm:text-5xl transition-all duration-700 group-hover:rotate-[360deg] z-10"
                                         style={{ color: skill.color }}
                                     >
                                         <skill.icon className="drop-shadow-[0_0_15px_currentColor]" />

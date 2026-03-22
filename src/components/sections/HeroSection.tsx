@@ -130,7 +130,6 @@ export default function HeroSection() {
                     scale: 0.7,
                     z: -500,
                     opacity: 0,
-                    filter: "blur(20px)",
                     ease: "none"
                 })
             });
@@ -174,7 +173,7 @@ export default function HeroSection() {
                     </p>
                     <h1
                         ref={titleRef}
-                        className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold font-[family-name:var(--font-space-grotesk)] leading-[1.1] mb-6 tracking-tight text-white transform-style-3d"
+                        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-[family-name:var(--font-space-grotesk)] leading-[1.1] mb-6 tracking-tight text-white transform-style-3d"
                     >
                         Designing the <br />
                         <span
@@ -193,16 +192,16 @@ export default function HeroSection() {
                         I engineer high-performance web applications with striking visual aesthetics. Let's push the boundaries of what's possible in the browser.
                     </p>
 
-                    <div ref={ctaRef} className="flex flex-wrap gap-5 justify-center lg:justify-start transform-style-3d">
-                        <a href="#projects" className="btn-primary group relative overflow-hidden bg-white/5 border border-accent-cyan/30 text-white shadow-[0_0_20px_rgba(0,165,233,0.2)] hover:shadow-[0_0_50px_rgba(0,165,233,0.5)] px-8 py-4 rounded-full transition-all duration-500 hover:-translate-y-2" style={{ transform: "translateZ(30px)" }}>
-                            <span className="relative z-10 font-[family-name:var(--font-space-grotesk)] tracking-wider flex items-center gap-2">
+                    <div ref={ctaRef} className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start transform-style-3d">
+                        <a href="#projects" className="btn-primary group relative overflow-hidden bg-white/5 border border-accent-cyan/30 text-white shadow-[0_0_20px_rgba(0,165,233,0.2)] hover:shadow-[0_0_50px_rgba(0,165,233,0.5)] px-8 py-4 rounded-full transition-all duration-500 hover:-translate-y-2 text-center" style={{ transform: "translateZ(30px)" }}>
+                            <span className="relative z-10 font-[family-name:var(--font-space-grotesk)] tracking-wider flex items-center justify-center gap-2">
                                 Initialize Sequence
                                 <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                             </span>
                             <div className="absolute inset-0 bg-gradient-to-r from-accent-cyan/20 to-accent-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         </a>
 
-                        <a href="/cv.pdf" download className="btn-outline border-white/20 text-gray-300 hover:text-white hover:border-white/50 px-8 py-4 rounded-full transition-all duration-500 flex items-center gap-2 font-[family-name:var(--font-space-grotesk)] tracking-wider hover:-translate-y-2" style={{ transform: "translateZ(20px)" }}>
+                        <a href="/cv.pdf" download className="btn-outline border-white/20 text-gray-300 hover:text-white hover:border-white/50 px-8 py-4 rounded-full transition-all duration-500 flex items-center justify-center gap-2 font-[family-name:var(--font-space-grotesk)] tracking-wider hover:-translate-y-2 text-center" style={{ transform: "translateZ(20px)" }}>
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
                             Download CV
                         </a>
@@ -235,13 +234,13 @@ export default function HeroSection() {
                         <div className="absolute -inset-24 rounded-full border border-pink-500/20 animate-[spin_20s_linear_infinite]" style={{ transform: "translateZ(120px) rotateX(15deg) rotateY(45deg)" }} />
 
                         {/* 3D Floating Node Data */}
-                        <div className="absolute -top-10 -right-10 glass-strong px-4 py-2 rounded-xl text-[12px] text-accent-cyan font-mono border border-accent-cyan/30 shadow-[0_0_20px_rgba(14,165,233,0.2)]" style={{ transform: "translateZ(150px) rotateY(-20deg)" }}>
+                        <div className="absolute -top-10 -right-5 sm:-right-10 glass-strong px-4 py-2 rounded-xl text-[10px] sm:text-[12px] text-accent-cyan font-mono border border-accent-cyan/30 shadow-[0_0_20px_rgba(14,165,233,0.2)]" style={{ transform: "translateZ(150px) rotateY(-20deg)" }}>
                             <div className="flex items-center gap-2">
                                 <span className="w-2 h-2 bg-accent-cyan rounded-full animate-pulse" />
                                 SYS: CORE_ONLINE
                             </div>
                         </div>
-                        <div className="absolute -bottom-10 -left-10 glass-strong px-4 py-2 rounded-xl text-[12px] text-accent-purple font-mono border border-accent-purple/30 shadow-[0_0_20px_rgba(129,140,248,0.2)]" style={{ transform: "translateZ(130px) rotateY(20deg)" }}>
+                        <div className="absolute -bottom-10 -left-5 sm:-left-10 glass-strong px-4 py-2 rounded-xl text-[10px] sm:text-[12px] text-accent-purple font-mono border border-accent-purple/30 shadow-[0_0_20px_rgba(129,140,248,0.2)]" style={{ transform: "translateZ(130px) rotateY(20deg)" }}>
                             STATUS: ENHANCED_3D
                         </div>
                     </div>
