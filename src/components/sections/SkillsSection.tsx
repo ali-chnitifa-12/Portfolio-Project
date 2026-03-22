@@ -24,7 +24,7 @@ gsap.registerPlugin(ScrollTrigger);
 const skills = [
     { name: "Next.js", level: 90, color: "#ffffff", icon: SiNextdotjs, desc: "App Router, SSR, API", border: "border-white/20", glow: "from-white/20 to-transparent" },
     { name: "React", level: 92, color: "#61DAFB", icon: SiReact, desc: "Hooks, Context, Redux", border: "border-sky-400/30", glow: "from-sky-400/20 to-transparent" },
-    { name: "TypeScript", level: 88, color: "#3178C6", icon: SiTypescript, desc: "Type Safety, Interfaces", border: "border-blue-500/30", glow: "from-blue-500/20 to-transparent" },
+    { name: "Express.js", level: 88, color: "#000000", icon: SiNodedotjs, desc: "Restful APIs, Middleware", border: "border-gray-500/30", glow: "from-gray-500/20 to-transparent" },
     { name: "Node.js", level: 85, color: "#339933", icon: SiNodedotjs, desc: "Express, APIs, Auth", border: "border-green-500/30", glow: "from-green-500/20 to-transparent" },
     { name: "Laravel", level: 88, color: "#FF2D20", icon: SiLaravel, desc: "PHP Framework, REST APIs", border: "border-red-500/30", glow: "from-red-500/20 to-transparent" },
     { name: "MongoDB", level: 80, color: "#47A248", icon: SiMongodb, desc: "Mongoose, Aggregation", border: "border-emerald-500/30", glow: "from-emerald-500/20 to-transparent" },
