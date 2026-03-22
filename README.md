@@ -2,7 +2,7 @@
 
 A professional, high-performance developer portfolio featuring futuristic design, 3D animations, and a seamless user experience. Built with Next.js, GSAP, and Tailwind CSS.
 
-![Portfolio Preview](/public/projects/ecommerce.png)
+
 
 ## 🚀 Features
 
