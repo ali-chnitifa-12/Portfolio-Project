@@ -6,271 +6,159 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const techStack = [
-    { name: "React", short: "Re", color: "#61DAFB", glow: "rgba(97,218,251,0.5)" },
-    { name: "Next.js", short: "Nx", color: "#ffffff", glow: "rgba(255,255,255,0.5)" },
-    { name: "Laravel", short: "Lv", color: "#FF2D20", glow: "rgba(255,45,32,0.5)" },
-    { name: "Node.js", short: "No", color: "#339933", glow: "rgba(51,153,51,0.5)" },
-    { name: "MongoDB", short: "Mg", color: "#47A248", glow: "rgba(71,162,72,0.5)" },
-    { name: "TailwindCSS", short: "Tw", color: "#06B6D4", glow: "rgba(6,182,212,0.5)" },
-    { name: "GSAP", short: "Gs", color: "#88CE02", glow: "rgba(136,206,2,0.5)" },
-    { name: "Git", short: "Gt", color: "#F05032", glow: "rgba(240,80,50,0.5)" },
-    { name: "MySQL", short: "My", color: "#4479A1", glow: "rgba(68,121,161,0.5)" },
-    { name: "PL/SQL", short: "Pl", color: "#f80000", glow: "rgba(248,0,0,0.5)" },
-    { name: "REST API", short: "Api", color: "#009688", glow: "rgba(0,150,136,0.5)" },
-    { name: "Postman", short: "Pm", color: "#FF6C37", glow: "rgba(255,108,55,0.5)" },
-];
-
 export default function AboutSection() {
     const sectionRef = useRef<HTMLElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const titleRef = useRef<HTMLHeadingElement>(null);
     const bioCardRef = useRef<HTMLDivElement>(null);
-    const techContainerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
+            // --- 0. Setup 3D Space ---
             gsap.set(sectionRef.current, { perspective: 2000 });
-            gsap.set([titleRef.current, bioCardRef.current, techContainerRef.current], {
-                transformStyle: "preserve-3d"
-            });
+            gsap.set(bioCardRef.current, { transformStyle: "preserve-3d" });
 
-            const isMobile = window.innerWidth < 768;
-
-            // 1. Cinematic Slide-in Entrance
-            // Bio card slides in from the left and rotates into place
+            // --- 1. Reveal Animation (3D Drop-in) ---
             gsap.from(bioCardRef.current, {
-                x: isMobile ? -100 : -300,
-                z: isMobile ? -200 : -800,
-                rotateY: isMobile ? -15 : -45,
+                z: -800,
+                rotationX: -60,
                 opacity: 0,
-                duration: 1.5,
-                ease: "power3.out",
+                duration: 2,
+                ease: "expo.out",
                 scrollTrigger: {
                     trigger: sectionRef.current,
-                    start: "top 70%",
-                },
-            });
-
-            // Tech container slides in from the right
-            gsap.from(techContainerRef.current, {
-                x: isMobile ? 100 : 300,
-                z: isMobile ? -200 : -800,
-                rotateY: isMobile ? 15 : 45,
-                opacity: 0,
-                duration: 1.5,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: "top 70%",
-                },
-            });
-
-            // Title drops down
-            gsap.from(titleRef.current, {
-                y: isMobile ? -50 : -100,
-                z: isMobile ? -100 : -500,
-                rotateX: isMobile ? -15 : -45,
-                opacity: 0,
-                duration: 1.2,
-                ease: "back.out(1.5)",
-                scrollTrigger: {
-                    trigger: titleRef.current,
                     start: "top 80%",
-                },
+                }
             });
 
-            // Tech icons pop in sequentially
-            gsap.from(".tech-item", {
-                scale: 0,
-                z: -200,
-                rotationZ: 45,
+            // --- 2. Hyper-Immersive 3D Parallax ---
+            const handleMouseMove = (e: MouseEvent) => {
+                if (!bioCardRef.current) return;
+                const rect = bioCardRef.current.getBoundingClientRect();
+                const x = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2); // -1 to 1
+                const y = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
+
+                gsap.to(bioCardRef.current, {
+                    rotationY: x * 20,
+                    rotationX: -y * 20,
+                    z: 60,
+                    duration: 1,
+                    ease: "power2.out"
+                });
+
+                // Multi-layer parallax for inner elements
+                gsap.to(".parallax-depth-1", { x: x * 15, y: y * 15, z: 40, duration: 1.2, ease: "power2.out" });
+                gsap.to(".parallax-depth-2", { x: x * 30, y: y * 30, z: 80, duration: 1.4, ease: "power2.out" });
+                gsap.to(".parallax-depth-3", { x: x * 45, y: y * 45, z: 120, duration: 1.6, ease: "power2.out" });
+            };
+
+            const handleMouseLeave = () => {
+                gsap.to([bioCardRef.current, ".parallax-depth-1", ".parallax-depth-2", ".parallax-depth-3"], {
+                    rotationX: 0,
+                    rotationY: 0,
+                    x: 0,
+                    y: 0,
+                    z: 0,
+                    duration: 1.5,
+                    ease: "elastic.out(1, 0.4)"
+                });
+            };
+
+            sectionRef.current?.addEventListener("mousemove", handleMouseMove);
+            sectionRef.current?.addEventListener("mouseleave", handleMouseLeave);
+
+            // --- 3. Titular Entrance ---
+            gsap.from(titleRef.current, {
+                y: 100,
                 opacity: 0,
-                duration: 0.8,
-                stagger: 0.1,
+                rotationX: -45,
+                duration: 1.2,
                 ease: "back.out(2)",
                 scrollTrigger: {
-                    trigger: techContainerRef.current,
-                    start: "top 80%",
-                },
-            });
-
-            // Interactive Parallax on the Bio Card
-            const bioCard = bioCardRef.current;
-            if (bioCard) {
-                bioCard.addEventListener("mousemove", (e) => {
-                    const rect = bioCard.getBoundingClientRect();
-                    const rx = (e.clientY - rect.top - rect.height / 2) / 20;
-                    const ry = -(e.clientX - rect.left - rect.width / 2) / 20;
-
-                    gsap.to(bioCard, {
-                        rotationX: rx,
-                        rotationY: ry,
-                        z: 50,
-                        duration: 0.5,
-                        ease: "power1.out"
-                    });
-                });
-
-                bioCard.addEventListener("mouseleave", () => {
-                    gsap.to(bioCard, {
-                        rotationX: 0,
-                        rotationY: 0,
-                        z: 0,
-                        duration: 1,
-                        ease: "elastic.out(1, 0.3)"
-                    });
-                });
-            }
-
-            // Magnetic Tech Icons
-            const techItems = document.querySelectorAll(".tech-item");
-            techItems.forEach((item) => {
-                const icon = item.querySelector(".icon-cube");
-                item.addEventListener("mousemove", (e: Event) => {
-                    const evt = e as MouseEvent;
-                    const rect = item.getBoundingClientRect();
-                    const x = (evt.clientX - rect.left - rect.width / 2) * 0.5;
-                    const y = (evt.clientY - rect.top - rect.height / 2) * 0.5;
-
-                    gsap.to(icon, {
-                        x: x,
-                        y: y,
-                        rotationX: -y,
-                        rotationY: x,
-                        z: 30,
-                        scale: 1.1,
-                        duration: 0.3,
-                        ease: "power2.out"
-                    });
-                });
-
-                item.addEventListener("mouseleave", () => {
-                    gsap.to(icon, {
-                        x: 0,
-                        y: 0,
-                        rotationX: 0,
-                        rotationY: 0,
-                        z: 0,
-                        scale: 1,
-                        duration: 0.7,
-                        ease: "elastic.out(1, 0.3)"
-                    });
-                });
-            });
-
-            // 2. Premium "Float Away" on Scroll Out
-            gsap.to(containerRef.current, {
-                y: -150,
-                z: -500,
-                opacity: 0.2,
-                filter: "blur(10px)",
-                ease: "power1.inOut",
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: "bottom 80%",
-                    end: "bottom top",
-                    scrub: 1,
-                },
+                    trigger: titleRef.current,
+                    start: "top 85%",
+                }
             });
 
         }, sectionRef.current!);
-
         return () => ctx.revert();
     }, []);
 
     return (
-        <section ref={sectionRef} id="about" className="section-padding relative z-10 min-h-screen flex items-center bg-transparent [perspective:2000px] overflow-hidden">
-            {/* Ambient Background Glows - Reduced blur radius and opacity for performance */}
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-[50px] pointer-events-none" />
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-[50px] pointer-events-none" />
-
-            <div ref={containerRef} className="max-w-7xl mx-auto w-full transform-style-3d will-change-transform pt-20">
-                {/* Section Title */}
-                <div ref={titleRef} className="text-center mb-20 transform-style-3d text-white">
-                    <h2 className="text-5xl md:text-6xl font-bold font-[family-name:var(--font-space-grotesk)] mb-6 drop-shadow-[0_0_15px_rgba(0,212,255,0.4)]">
-                        About <span className="gradient-text">Me</span>
+        <section ref={sectionRef} id="about" className="section-padding relative z-10 min-h-screen flex items-center bg-transparent [perspective:2000px] overflow-hidden py-24">
+            <div ref={containerRef} className="max-w-7xl mx-auto w-full transform-style-3d will-change-transform">
+                
+                {/* Title Section */}
+                <div ref={titleRef} className="text-center mb-24 transform-style-3d text-white">
+                    <h2 className="text-5xl md:text-7xl font-bold font-[family-name:var(--font-space-grotesk)] mb-6 drop-shadow-[0_0_20px_rgba(14,165,233,0.5)]">
+                        Vision & <span className="gradient-text">Identity</span>
                     </h2>
-                    <div className="w-24 h-1.5 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 mx-auto rounded-full shadow-[0_0_15px_rgba(168,85,247,0.7)]" />
+                    <div className="w-24 h-1.5 bg-gradient-to-r from-accent-cyan via-accent-purple to-pink-500 mx-auto rounded-full shadow-[0_0_20px_rgba(14,165,233,0.6)]" />
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start transform-style-3d">
+                <div className="max-w-5xl mx-auto transform-style-3d px-6">
+                    {/* Immersive Bio Card */}
+                    <div 
+                        ref={bioCardRef} 
+                        className="glass-strong rounded-[3rem] p-12 md:p-20 relative overflow-hidden group shadow-2xl border border-white/20 transform-style-3d transition-all duration-700 hover:border-accent-cyan/40"
+                    >
+                        {/* Background Aura Layers */}
+                        <div className="absolute top-[-20%] right-[-20%] w-[60%] h-[60%] bg-accent-cyan/10 rounded-full blur-[120px] pointer-events-none parallax-depth-1" />
+                        <div className="absolute bottom-[-20%] left-[-20%] w-[60%] h-[60%] bg-accent-purple/10 rounded-full blur-[120px] pointer-events-none parallax-depth-1" />
 
-                    {/* Bio Card - Premium Glassmorphism (Optimized) */}
-                    <div ref={bioCardRef} className="lg:col-span-7 glass-strong-fast rounded-[2.5rem] p-10 md:p-14 relative overflow-hidden group shadow-2xl border border-white/20 transform-style-3d hover:border-cyan-500/40 transition-colors duration-500 will-change-transform">
-                        {/* Shimmer effect */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 relative z-10 transform-style-3d">
+                            
+                            {/* Main Narrative Column */}
+                            <div className="lg:col-span-8 space-y-10 transform-style-3d parallax-depth-2">
+                                <div className="space-y-4 transform-style-3d">
+                                    <h3 className="text-4xl md:text-6xl font-bold font-[family-name:var(--font-space-grotesk)] leading-tight text-white">
+                                        Crafting the <span className="gradient-text">Digital Nexus</span>
+                                    </h3>
+                                    <div className="flex items-center gap-4">
+                                        <span className="h-[2px] w-12 bg-accent-cyan rounded-full" />
+                                        <p className="text-xl text-accent-cyan font-mono tracking-widest uppercase">Full Stack Architect</p>
+                                    </div>
+                                </div>
 
-                        <div className="relative z-10" style={{ transform: "translateZ(30px)" }}>
-                            <h3 className="text-3xl font-bold mb-6 font-[family-name:var(--font-space-grotesk)] text-white">
-                                Passionate <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Architect</span> of the Web
-                            </h3>
+                                <div className="space-y-6 text-gray-300 text-lg md:text-xl leading-relaxed font-light">
+                                    <p>
+                                        I am a specialist in building high-performance web systems that bridge the gap between <span className="text-white font-medium">immaculate design</span> and <span className="text-white font-medium">robust engineering</span>. Based in Morocco, I focus on creating immersive 3D-infused experiences that stay long after the window is closed.
+                                    </p>
+                                    <p>
+                                        My approach combines technical precision with artistic intuition, ensuring every line of code serves both performance and aesthetic excellence.
+                                    </p>
+                                </div>
 
-                            <div className="space-y-6 text-gray-300 text-lg leading-relaxed font-light">
-                                <p>
-                                    I am a <strong className="text-white font-semibold">Full Stack Developer</strong> dedicated to crafting digital experiences that blur the line between software and art. I specialize in modern JavaScript frameworks and love breathing life into creative designs with clean, robust code.
-                                </p>
-                                <p>
-                                    Whether architecting scalable backends or fine-tuning <strong className="text-white font-semibold">cinematic 3D animations</strong> on the frontend, I build holistic solutions that are visually arresting and highly performant.
-                                </p>
-                                <p>
-                                    Beyond the editor, I am constantly exploring the bleeding edge of web technologies, eager to push boundaries and build applications that inspire.
-                                </p>
+                                {/* Dynamic Skill Highlights */}
+                                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-white/10 transform-style-3d parallax-depth-3">
+                                    {[
+                                        { label: "Origin", val: "Morocco" },
+                                        { label: "Velocity", val: "Lighthouse 100" },
+                                        { label: "Focus", val: "React & Beyond" },
+                                        { label: "Status", val: "Active" }
+                                    ].map((item) => (
+                                        <div key={item.label} className="space-y-2 transform-style-3d">
+                                            <p className="text-[10px] text-gray-500 uppercase tracking-[0.3em] font-bold">{item.label}</p>
+                                            <p className="text-lg font-bold text-white group-hover:text-accent-cyan transition-colors">{item.val}</p>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
 
-                            {/* Floating Stats Orbs */}
-                            <div className="grid grid-cols-3 gap-6 mt-12 pt-10 border-t border-white/10">
-                                {[
-                                    { value: "2+", label: "Years Exp.", color: "from-cyan-400 to-blue-500" },
-                                    { value: "15+", label: "Projects", color: "from-purple-400 to-pink-500" },
-                                    { value: "10+", label: "Technologies", color: "from-green-400 to-cyan-500" }
-                                ].map((stat, i) => (
-                                    <div key={i} className="text-center relative group/stat cursor-default">
-                                        <div className="absolute inset-0 bg-black/20 rounded-2xl blur-xl group-hover/stat:bg-white/5 transition-colors duration-300" />
-                                        <div className={`text-4xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r ${stat.color} group-hover/stat:scale-110 transition-transform duration-300 inline-block`}>
-                                            {stat.value}
-                                        </div>
-                                        <div className="text-sm font-medium text-gray-400 uppercase tracking-widest">{stat.label}</div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Tech Stack - Magnetic Gems */}
-                    <div ref={techContainerRef} className="lg:col-span-5 transform-style-3d will-change-transform">
-                        <div className="glass-fast rounded-[2.5rem] p-10 border border-white/10 shadow-2xl h-full flex flex-col justify-center">
-                            <h3 className="text-2xl font-bold mb-8 font-[family-name:var(--font-space-grotesk)] text-center text-white tracking-wide">
-                                Core Arsenal
-                            </h3>
-
-                            <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-3 gap-6 transform-style-3d">
-                                {techStack.map((tech) => (
-                                    <div
-                                        key={tech.name}
-                                        className="tech-item relative aspect-square flex flex-col items-center justify-center group transform-style-3d perspective-[500px]"
-                                    >
-                                        {/* Name tooltip */}
-                                        <span className="absolute -top-8 text-xs font-bold px-3 py-1 bg-black/80 text-white rounded-full opacity-0 group-hover:opacity-100 group-hover:-translate-y-2 transition-all duration-300 whitespace-nowrap z-20 pointer-events-none backdrop-blur-md border border-white/10">
-                                            {tech.name}
-                                        </span>
-
-                                        {/* The Magnetic 3D Cube/Gem */}
-                                        <div
-                                            className="icon-cube w-16 h-16 rounded-2xl flex items-center justify-center text-xl font-bold font-[family-name:var(--font-space-grotesk)] transition-shadow duration-300 relative will-change-transform"
-                                            style={{
-                                                background: `linear-gradient(135deg, rgba(255,255,255,0.1), ${tech.color}40)`,
-                                                color: "#fff",
-                                                border: `1px solid ${tech.color}80`,
-                                                boxShadow: `0 10px 30px -10px ${tech.glow}, inset 0 2px 20px ${tech.glow}`,
-                                            }}
-                                        >
-                                            {/* Inner reflection */}
-                                            <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/30 to-transparent rounded-t-2xl pointer-events-none" />
-                                            <span style={{ textShadow: `0 0 10px ${tech.color}` }}>{tech.short}</span>
-                                        </div>
-                                    </div>
-                                ))}
+                            {/* Impact/Stats Column */}
+                            <div className="lg:col-span-4 flex flex-col justify-center gap-8 transform-style-3d parallax-depth-3">
+                                <div className="glass-fast p-10 rounded-3xl border border-white/10 text-center space-y-2 group/stat hover:bg-white/5 transition-all duration-500 transform-style-3d hover:translate-z-20">
+                                    <p className="text-5xl font-bold gradient-text drop-shadow-sm">99%</p>
+                                    <p className="text-xs text-gray-500 uppercase tracking-[0.2em] font-mono">Satisfaction Index</p>
+                                </div>
+                                <div className="glass-fast p-10 rounded-3xl border border-white/10 text-center space-y-2 group/stat hover:bg-white/5 transition-all duration-500 transform-style-3d hover:translate-z-20">
+                                    <p className="text-5xl font-bold text-accent-cyan">ULTRA</p>
+                                    <p className="text-xs text-gray-500 uppercase tracking-[0.2em] font-mono">Speed Operations</p>
+                                </div>
+                                <div className="glass-fast p-10 rounded-3xl border border-white/10 text-center space-y-2 group/stat hover:bg-white/5 transition-all duration-500 transform-style-3d hover:translate-z-20">
+                                    <p className="text-5xl font-bold text-accent-purple">GLOBAL</p>
+                                    <p className="text-xs text-gray-500 uppercase tracking-[0.2em] font-mono">Service Reach</p>
+                                </div>
                             </div>
                         </div>
                     </div>

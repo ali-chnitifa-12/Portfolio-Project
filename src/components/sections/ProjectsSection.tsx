@@ -150,7 +150,7 @@ export default function ProjectsSection() {
                 <h2 className="text-4xl md:text-5xl font-bold font-[family-name:var(--font-space-grotesk)] mb-4">
                     My <span className="gradient-text">Projects</span>
                 </h2>
-                <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full mb-2" />
+                <div className="w-20 h-1 bg-gradient-to-r from-accent-cyan to-accent-purple mx-auto rounded-full mb-2" />
                 <p className="text-gray-400 max-w-lg mx-auto bg-black/50 backdrop-blur-md px-6 py-2 rounded-full border border-white/10">
                     Scroll to rotate the 3D Carousel
                 </p>
@@ -163,7 +163,7 @@ export default function ProjectsSection() {
                         <div
                             key={i}
                             ref={(el) => setCardRef(el, i)}
-                            className="absolute w-full h-full glass-strong-fast rounded-3xl overflow-hidden pointer-events-auto shadow-2xl border border-white/20 transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_0_40px_rgba(0,212,255,0.3)] group backface-hidden will-change-transform"
+                            className="absolute w-full h-full glass-strong-fast rounded-3xl overflow-hidden pointer-events-auto shadow-2xl border border-white/20 transition-all duration-300 hover:border-accent-cyan/50 hover:shadow-[0_0_40px_rgba(14,165,233,0.3)] group backface-hidden will-change-transform"
                         >
                             <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-50`} />
 
@@ -178,7 +178,7 @@ export default function ProjectsSection() {
                                         }}
                                     />
                                 )}
-                                <div className="text-6xl font-bold font-[family-name:var(--font-space-grotesk)] text-white/20 group-hover:text-cyan-400/40 transition-colors duration-500 relative z-10 pointer-events-none mix-blend-overlay">
+                                <div className="text-6xl font-bold font-[family-name:var(--font-space-grotesk)] text-white/20 group-hover:text-accent-cyan/40 transition-colors duration-500 relative z-10 pointer-events-none mix-blend-overlay">
                                     {project.title.charAt(0)}
                                 </div>
                             </div>

@@ -140,13 +140,13 @@ export default function ServicesSection() {
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20 service-header">
-          <h2 className="text-sm text-cyan-400 tracking-[0.5em] uppercase mb-4 font-[family-name:var(--font-space-grotesk)] flex items-center justify-center gap-4">
-            <span className="w-12 h-[1px] bg-cyan-400/50 block"></span>
+          <h2 className="text-sm text-accent-cyan tracking-[0.5em] uppercase mb-4 font-[family-name:var(--font-space-grotesk)] flex items-center justify-center gap-4">
+            <span className="w-12 h-[1px] bg-accent-cyan/50 block"></span>
             What I Do
-            <span className="w-12 h-[1px] bg-cyan-400/50 block"></span>
+            <span className="w-12 h-[1px] bg-accent-cyan/50 block"></span>
           </h2>
           <h3 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white font-[family-name:var(--font-space-grotesk)] mb-6">
-            Digital <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Services</span>
+            Digital <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan to-accent-blue">Services</span>
           </h3>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg font-light">
             I engineer modern web solutions combining technical excellence with premium visual aesthetics.

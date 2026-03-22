@@ -48,7 +48,7 @@ export default function Footer() {
                                 href={link.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:glow-cyan transition-all duration-300"
+                                className="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-accent-cyan hover:glow-cyan transition-all duration-300"
                                 aria-label={link.label}
                             >
                                 {link.icon}

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -8,32 +8,25 @@ gsap.registerPlugin(ScrollTrigger);
 
 const experiences = [
     {
-        year: "2025 - 2026",
-        title: "Full Stack Engineer",
-        company: "Global Tech Solutions",
-        description: "Leading the development of cloud-architected web applications. Focused on scalability, real-time data synchronization, and high-performance frontend architectures.",
-        tech: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "AWS"],
-    },
-    {
-        year: "2024 - 2025",
+        year: "2024 - Present",
         title: "Full Stack Developer",
         company: "Freelance",
         description: "Building modern web applications for clients using React, Next.js, Node.js, and MongoDB. Implementing advanced animations and 3D effects with GSAP.",
         tech: ["React", "Next.js", "Node.js", "MongoDB", "GSAP"],
     },
     {
-        year: "Mars 2024 – Mai 2024",
-        title: "Stagiaire Développeur Web",
-        company: "MarsaMarocCompany",
-        description: "Développement d’une application web interne pour la gestion et le suivi des employés. Mise en place de l'authentification et de la gestion des rôles. Création d’API REST et intégration du frontend React avec le backend Laravel.",
-        tech: ["React.js", "Laravel", "MySQL", "Tailwind CSS"],
+        year: "2023 - 2024",
+        title: "Frontend Developer",
+        company: "Web Agency",
+        description: "Developed responsive and interactive web applications. Focused on performance optimization, accessibility, and modern UI/UX design principles.",
+        tech: ["React", "Laravel", "TailwindCSS", "GSAP"],
     },
     {
-        year: "2023 - 2024",
-        title: "Personal Project",
-        company: "Ecommerce Platform",
-        description: "Developed a full-featured ecommerce platform with advanced product filtering, shopping cart functionality, and secure checkout. Focused on performance and responsive design using modern technologies.",
-        tech: ["React", "Next.js", "TailwindCSS", "MongoDB", "GSAP"],
+        year: "2022 - 2023",
+        title: "Junior Developer",
+        company: "Tech Startup",
+        description: "Started my professional journey building web interfaces and learning full-stack development. Worked on multiple client projects and internal tools.",
+        tech: ["JavaScript", "React", "Node.js", "CSS"],
     },
     {
         year: "2021 - 2022",
@@ -170,7 +163,7 @@ export default function ExperienceSection() {
                     >
                         My <span className="gradient-text">Experience</span>
                     </h2>
-                    <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-accent-purple mx-auto rounded-full" />
+                    <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full" />
                 </div>
 
                 {/* Timeline Container */}
@@ -178,13 +171,13 @@ export default function ExperienceSection() {
                     {/* 3D Vertical Neon Line */}
                     <div
                         ref={lineRef}
-                        className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-accent-cyan via-purple-500 to-pink-500 shadow-[0_0_20px_rgba(168,85,247,0.8)] rounded-full hidden md:block"
+                        className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-500 via-purple-500 to-pink-500 shadow-[0_0_20px_rgba(168,85,247,0.8)] rounded-full hidden md:block"
                         style={{ transform: "translateX(-50%) translateZ(-50px)" }} // pushed back slightly
                     />
 
                     {/* Mobile Line */}
                     <div
-                        className="absolute left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-accent-cyan via-purple-500 to-pink-500 shadow-[0_0_20px_rgba(168,85,247,0.8)] rounded-full md:hidden"
+                        className="absolute left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-500 via-purple-500 to-pink-500 shadow-[0_0_20px_rgba(168,85,247,0.8)] rounded-full md:hidden"
                         style={{ transform: "translateZ(-50px)" }}
                     />
 
@@ -201,19 +194,19 @@ export default function ExperienceSection() {
                                         }`}
                                 >
                                     {/* 3D Glass Pane */}
-                                    <div className="glass-strong rounded-3xl p-8 relative overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.6)] border border-white/20 hover:border-accent-cyan/50 hover:shadow-[0_0_60px_rgba(0,212,255,0.3)] transition-colors duration-500 transform-style-3d">
+                                    <div className="glass-strong rounded-3xl p-8 relative overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.6)] border border-white/20 hover:border-cyan-400/50 hover:shadow-[0_0_60px_rgba(0,212,255,0.3)] transition-colors duration-500 transform-style-3d">
 
                                         {/* Subtle internal gradient glow */}
-                                        <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan/10 to-accent-purple/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                                        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                                         {/* Content inside pane */}
                                         <div className="relative z-10" style={{ transform: "translateZ(30px)" }}>
                                             {/* Year badge */}
-                                            <span className="inline-block text-xs px-4 py-1.5 rounded-full bg-cyan-500/20 text-accent-cyan border border-cyan-500/30 mb-4 font-[family-name:var(--font-space-grotesk)] shadow-[0_0_10px_rgba(0,212,255,0.3)]">
+                                            <span className="inline-block text-xs px-4 py-1.5 rounded-full bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 mb-4 font-[family-name:var(--font-space-grotesk)] shadow-[0_0_10px_rgba(0,212,255,0.3)]">
                                                 {exp.year}
                                             </span>
 
-                                            <h3 className="text-2xl font-bold mb-2 font-[family-name:var(--font-space-grotesk)] text-white group-hover:text-accent-cyan transition-colors">
+                                            <h3 className="text-2xl font-bold mb-2 font-[family-name:var(--font-space-grotesk)] text-white group-hover:text-cyan-400 transition-colors">
                                                 {exp.title}
                                             </h3>
                                             <p className="text-purple-400 text-sm font-semibold mb-4 tracking-wider">{exp.company}</p>
@@ -241,13 +234,13 @@ export default function ExperienceSection() {
 
                                 {/* Center 3D glowing dot */}
                                 <div
-                                    className="timeline-dot absolute left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-black border-2 border-accent-cyan shadow-[0_0_20px_rgba(0,212,255,0.8)] z-10 hidden md:flex items-center justify-center transform-style-3d group-hover:scale-125 group-hover:border-purple-400 group-hover:shadow-[0_0_30px_rgba(168,85,247,0.8)] transition-all duration-500"
+                                    className="timeline-dot absolute left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-black border-2 border-cyan-400 shadow-[0_0_20px_rgba(0,212,255,0.8)] z-10 hidden md:flex items-center justify-center transform-style-3d group-hover:scale-125 group-hover:border-purple-400 group-hover:shadow-[0_0_30px_rgba(168,85,247,0.8)] transition-all duration-500"
                                 >
-                                    <div className="w-2 h-2 bg-accent-cyan rounded-full group-hover:bg-purple-400 transition-colors" />
+                                    <div className="w-2 h-2 bg-cyan-400 rounded-full group-hover:bg-purple-400 transition-colors" />
                                 </div>
 
                                 {/* Mobile dot */}
-                                <div className="timeline-dot absolute left-[22px] top-10 w-4 h-4 rounded-full bg-accent-cyan shadow-[0_0_15px_rgba(0,212,255,0.8)] z-10 md:hidden" />
+                                <div className="timeline-dot absolute left-[22px] top-10 w-4 h-4 rounded-full bg-cyan-400 shadow-[0_0_15px_rgba(0,212,255,0.8)] z-10 md:hidden" />
 
                                 {/* Spacer for opposite side */}
                                 <div className="hidden md:block w-[calc(50%-3rem)] pointer-events-none" />

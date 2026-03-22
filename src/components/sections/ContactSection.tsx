@@ -208,7 +208,7 @@ export default function ContactSection() {
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-[family-name:var(--font-space-grotesk)] mb-4 drop-shadow-[0_0_15px_rgba(0,212,255,0.5)]">
                         Get In <span className="gradient-text">Touch</span>
                     </h2>
-                    <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full" />
+                    <div className="w-20 h-1 bg-gradient-to-r from-accent-cyan to-accent-purple mx-auto rounded-full" />
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-stretch transform-style-3d">
@@ -225,7 +225,7 @@ export default function ContactSection() {
                                 value={formData.name}
                                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                 placeholder="Your Name"
-                                className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500/50 focus:shadow-[0_0_30px_rgba(0,212,255,0.2)] transition-all duration-300"
+                                className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-accent-cyan focus:shadow-[0_0_30px_rgba(0,212,255,0.2)] transition-all duration-300"
                                 required
                             />
                         </div>
@@ -236,7 +236,7 @@ export default function ContactSection() {
                                 value={formData.email}
                                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                 placeholder="Your Email"
-                                className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500/50 focus:shadow-[0_0_30px_rgba(0,212,255,0.2)] transition-all duration-300"
+                                className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-accent-cyan focus:shadow-[0_0_30px_rgba(0,212,255,0.2)] transition-all duration-300"
                                 required
                             />
                         </div>
@@ -247,7 +247,7 @@ export default function ContactSection() {
                                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                 placeholder="Message"
                                 rows={5}
-                                className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500/50 focus:shadow-[0_0_30px_rgba(0,212,255,0.2)] transition-all duration-300 resize-none"
+                                className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-accent-cyan focus:shadow-[0_0_30px_rgba(0,212,255,0.2)] transition-all duration-300 resize-none"
                                 required
                             />
                         </div>
@@ -281,11 +281,11 @@ export default function ContactSection() {
                                 className="flex items-center gap-4 glass rounded-2xl p-4 group hover:scale-110 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-300"
                                 style={{ transform: `translateZ(${i * 20}px)` }} // Stagger 3D depth
                             >
-                                <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-gray-400 group-hover:text-white group-hover:bg-purple-500/40 transition-all duration-300 shadow-[inset_0_0_10px_rgba(255,255,255,0.1)]">
+                                <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-accent-cyan group-hover:text-white group-hover:bg-purple-500/40 transition-all duration-300 shadow-[inset_0_0_10px_rgba(255,255,255,0.1)]">
                                     {link.icon}
                                 </div>
                                 <div>
-                                    <div className="text-lg font-bold font-[family-name:var(--font-space-grotesk)] group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-purple-500 transition-all">
+                                    <div className="text-lg font-bold font-[family-name:var(--font-space-grotesk)] group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-accent-cyan group-hover:to-accent-purple transition-all">
                                         {link.label}
                                     </div>
                                 </div>

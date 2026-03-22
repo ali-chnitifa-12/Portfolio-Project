@@ -76,7 +76,7 @@ export default function ResumeSection() {
 
                 {/* Header */}
                 <div className="resume-item text-center mb-16">
-                    <h2 className="text-xs sm:text-sm text-cyan-400 tracking-[0.5em] uppercase mb-4 font-[family-name:var(--font-space-grotesk)]">Digital Resume</h2>
+                    <h2 className="text-xs sm:text-sm text-accent-cyan tracking-[0.5em] uppercase mb-4 font-[family-name:var(--font-space-grotesk)]">Digital Resume</h2>
                     <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold font-[family-name:var(--font-space-grotesk)] mb-2">{resumeData.name}</h3>
                     <p className="text-lg sm:text-xl text-gray-400 font-light">{resumeData.title}</p>
                     <div className="flex flex-wrap justify-center gap-6 mt-6 text-sm text-gray-500">
@@ -91,7 +91,7 @@ export default function ResumeSection() {
                     <div className="lg:col-span-1 space-y-10">
                         <div className="resume-item glass-fast glass-shimmer rounded-2xl p-8 border border-white/5">
                             <h4 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                                <span className="w-2 h-2 bg-cyan-400 rounded-full" />
+                                <span className="w-2 h-2 bg-accent-cyan rounded-full" />
                                 Profil Professionnel
                             </h4>
                             <p className="text-gray-400 text-sm leading-relaxed">
@@ -108,7 +108,7 @@ export default function ResumeSection() {
                                 <div>
                                     <p className="text-xs text-gray-500 uppercase tracking-widest mb-3">Frontend</p>
                                     <div className="flex flex-wrap gap-2">
-                                        {resumeData.skills.frontend.map(s => <span key={s} className="px-3 py-1 bg-white/5 rounded-full text-xs text-cyan-300 border border-cyan-500/20">{s}</span>)}
+                                        {resumeData.skills.frontend.map(s => <span key={s} className="px-3 py-1 bg-white/5 rounded-full text-xs text-accent-cyan border border-accent-cyan/20">{s}</span>)}
                                     </div>
                                 </div>
                                 <div>
@@ -140,7 +140,7 @@ export default function ResumeSection() {
                                 <div key={idx} className="relative pl-8 border-l border-white/10">
                                     <div className="absolute top-0 left-[-5px] w-[9px] h-[9px] bg-blue-500 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
                                     <h5 className="text-xl font-bold text-white">{exp.company}</h5>
-                                    <p className="text-cyan-400 text-sm mb-4">{exp.role} | {exp.date}</p>
+                                    <p className="text-accent-cyan text-sm mb-4">{exp.role} | {exp.date}</p>
                                     <p className="text-gray-400 text-sm mb-4">{exp.desc}</p>
                                     <p className="text-xs text-gray-500 font-mono">Stack: {exp.stack}</p>
                                 </div>
@@ -164,7 +164,7 @@ export default function ResumeSection() {
                                 <h4 className="text-sm font-bold text-white mb-4 uppercase tracking-widest">Formation</h4>
                                 {resumeData.education.map((edu, idx) => (
                                     <div key={idx}>
-                                        <p className="text-sm font-bold text-cyan-400">{edu.school}</p>
+                                        <p className="text-sm font-bold text-accent-cyan">{edu.school}</p>
                                         <p className="text-xs text-gray-300">{edu.degree}</p>
                                         <p className="text-[10px] text-gray-500 mt-1">{edu.date}</p>
                                     </div>
