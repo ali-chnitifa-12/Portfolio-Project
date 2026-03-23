@@ -160,7 +160,7 @@ export default function HeroSection() {
 
             <div
                 ref={containerRef}
-                className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full transform-style-3d will-change-transform"
+                className="relative z-10 max-w-7xl mx-auto px-6 pt-24 sm:pt-32 lg:pt-0 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full transform-style-3d will-change-transform"
             >
                 {/* Text content */}
                 <div ref={contentRef} className="text-center lg:text-left z-20 transform-style-3d">
