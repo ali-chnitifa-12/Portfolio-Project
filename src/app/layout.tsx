@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import ChatBot from "@/components/ChatBot";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,14 +14,16 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Ali Chnitifa | Full Stack Developer",
+  title: "Ali Chnitifa | Junior Full-Stack Developer (React & Laravel)",
   description:
-    "Personal portfolio of Ali Chnitifa — Full Stack Developer specializing in React, Next.js, Node.js, and modern web technologies.",
+    "Portfolio of Ali Chnitifa — Junior Full-Stack Developer specializing in React, Laravel, MySQL, and REST APIs. Open to Junior Developer roles and freelance opportunities.",
   keywords: [
-    "Full Stack Developer",
-    "React",
-    "Next.js",
-    "Node.js",
+    "Junior Full-Stack Developer",
+    "React Developer",
+    "Laravel Developer",
+    "MySQL",
+    "REST API",
+    "Full Stack Developer Morocco",
     "Portfolio",
     "Web Developer",
   ],
@@ -37,6 +40,7 @@ export default function RootLayout({
         className={`${inter.variable} ${spaceGrotesk.variable} antialiased overflow-x-hidden`}
       >
         {children}
+        <ChatBot />
       </body>
     </html>
   );
