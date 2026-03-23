@@ -122,20 +122,20 @@ export default function AboutSection() {
 
                                 <div className="space-y-6 text-gray-300 text-lg md:text-xl leading-relaxed font-light">
                                     <p>
-                                        I am a specialist in building high-performance web systems that bridge the gap between <span className="text-white font-medium">immaculate design</span> and <span className="text-white font-medium">robust engineering</span>. Based in Morocco, I focus on creating immersive 3D-infused experiences that stay long after the window is closed.
+                                        I am a <span className="text-white font-medium">Junior Full-Stack Developer</span> on a mission to build high-scale, impactful web applications. My journey is defined by a deep curiosity for how the modern web works and a commitment to mastering the <span className="text-accent-cyan font-medium">React + Laravel</span> stack.
                                     </p>
                                     <p>
-                                        My approach combines technical precision with artistic intuition, ensuring every line of code serves both performance and aesthetic excellence.
+                                        I bridge the gap between technical complexity and intuitive user experiences. Currently, I'm focusing on architecting robust REST APIs and building performant frontends that solve real-world problems. I'm actively looking for a team where I can contribute my skills and continue growing as a professional engineer.
                                     </p>
                                 </div>
 
                                 {/* Dynamic Skill Highlights */}
                                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-white/10 transform-style-3d parallax-depth-3">
                                     {[
-                                        { label: "Origin", val: "Morocco" },
-                                        { label: "Velocity", val: "Lighthouse 100" },
-                                        { label: "Focus", val: "React & Beyond" },
-                                        { label: "Status", val: "Active" }
+                                        { label: "Location", val: "Morocco" },
+                                        { label: "Core Stack", val: "Laravel & React" },
+                                        { label: "Learning", val: "Cloud Scaling" },
+                                        { label: "Availability", val: "Junior Roles" }
                                     ].map((item) => (
                                         <div key={item.label} className="space-y-2 transform-style-3d">
                                             <p className="text-[10px] text-gray-500 uppercase tracking-[0.3em] font-bold">{item.label}</p>

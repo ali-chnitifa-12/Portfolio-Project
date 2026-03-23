@@ -8,49 +8,34 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
     {
-        title: "E-Commerce Platform",
-        description: "A full-stack e-commerce application with advanced animations, 3D product cards, and a complete shopping experience.",
+        title: "E-Commerce Ecosystem",
+        description: "A professional full-stack commerce solution. I engineered a custom REST API in Laravel to power a dynamic React frontend, featuring secure JWT authentication and a sophisticated admin control panel.",
         image: "/projects/ecommerce.png",
-        tech: ["React", "Node.js", "MongoDB", "GSAP"],
+        tech: ["React", "Laravel", "MySQL", "REST API", "Redux"],
+        features: ["JWT Auth", "Admin Dashboard", "Product CRUD", "Cart System"],
         liveLink: "#",
         githubLink: "https://github.com/ali-chnitifa-12",
-        gradient: "from-purple-500/20 to-pink-500/20",
+        gradient: "from-blue-600/30 to-purple-600/30",
     },
     {
-        title: "Hotel Booking App",
-        description: "Luxury hotel booking platform with cinematic animations, 3D room tours, and a multi-step booking flow.",
+        title: "Luxury Hotel Engine",
+        description: "Architected a premium reservation system focusing on high-end UI animations. Implemented a complex 5-step booking algorithm with real-time state synchronization.",
         image: "/projects/hotel.png",
-        tech: ["React", "Redux", "GSAP", "TailwindCSS"],
+        tech: ["React", "Tailwind", "GSAP", "Redux"],
+        features: ["3D Room Tours", "Booking Logic", "State Persistence"],
         liveLink: "#",
         githubLink: "https://github.com/ali-chnitifa-12",
         gradient: "from-cyan-500/20 to-blue-500/20",
     },
     {
-        title: "Car Rental Website",
-        description: "Futuristic car rental platform with Three.js 3D models, interactive UI, and smooth page transitions.",
+        title: "Futuristic Car Rental",
+        description: "Built a high-performance localized car rental platform. Focused on optimizing asset loading for 3D models and ensuring sub-second page transitions.",
         image: "/projects/carrental.png",
         tech: ["React", "Three.js", "TailwindCSS"],
+        features: ["3D Car Config", "Dynamic Pricing", "Responsive UI"],
         liveLink: "#",
         githubLink: "https://github.com/ali-chnitifa-12",
-        gradient: "from-green-500/20 to-cyan-500/20",
-    },
-    {
-        title: "Restaurant App",
-        description: "Modern food ordering application with animated menu, cart management, and premium dark theme design.",
-        image: "/projects/restaurant.png",
-        tech: ["React", "Redux", "GSAP", "TailwindCSS"],
-        liveLink: "#",
-        githubLink: "https://github.com/ali-chnitifa-12",
-        gradient: "from-orange-500/20 to-red-500/20",
-    },
-    {
-        title: "FitTrack App",
-        description: "Fitness tracking application with workout plans, nutrition guides, and progress analytics.",
-        image: "/projects/fittrack.png",
-        tech: ["React", "Redux", "TailwindCSS"],
-        liveLink: "#",
-        githubLink: "https://github.com/ali-chnitifa-12",
-        gradient: "from-emerald-500/20 to-teal-500/20",
+        gradient: "from-emerald-500/20 to-cyan-500/20",
     },
 ];
 
@@ -193,12 +178,22 @@ export default function ProjectsSection() {
                                     </p>
                                 </div>
 
-                                <div className="flex flex-wrap gap-2 mt-4">
-                                    {project.tech.map((t) => (
-                                        <span key={t} className="text-[10px] px-2 py-1 rounded-full bg-white/10 text-gray-300">
-                                            {t}
-                                        </span>
-                                    ))}
+                                <div className="space-y-4 mt-4">
+                                    <div className="flex flex-wrap gap-2">
+                                        {project.tech.map((t) => (
+                                            <span key={t} className="text-[9px] font-mono px-2 py-0.5 rounded-full bg-accent-cyan/10 text-accent-cyan border border-accent-cyan/20">
+                                                {t}
+                                            </span>
+                                        ))}
+                                    </div>
+                                    <ul className="grid grid-cols-2 gap-x-4 gap-y-1">
+                                        {(project as any).features?.map((f: string) => (
+                                            <li key={f} className="text-[10px] text-gray-400 flex items-center gap-1.5">
+                                                <span className="w-1 h-1 bg-accent-cyan rounded-full" />
+                                                {f}
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </div>
 
                                 {/* Actions hover */}

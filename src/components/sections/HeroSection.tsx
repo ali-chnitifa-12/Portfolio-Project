@@ -169,41 +169,40 @@ export default function HeroSection() {
                         className="text-xs md:text-sm text-accent-cyan tracking-[0.4em] uppercase mb-6 font-[family-name:var(--font-space-grotesk)] w-fit mx-auto lg:mx-0 flex items-center gap-3"
                     >
                         <span className="w-8 h-[1px] bg-accent-cyan inline-block" />
-                        System Architect & Full Stack Developer
+                        Junior Full-Stack Developer (React & Laravel)
                     </p>
                     <h1
                         ref={titleRef}
                         className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-[family-name:var(--font-space-grotesk)] leading-[1.1] mb-6 tracking-tight text-white transform-style-3d"
                     >
-                        Designing the <br />
                         <span
                             ref={nameRef}
-                            data-value="Future Web"
+                            data-value="I Build Scalable Web Solutions"
                             className="gradient-text drop-shadow-[0_0_30px_rgba(14,165,233,0.6)] inline-block"
                             style={{ transform: "translateZ(50px)" }}
                         >
-                            Future Web
+                            I Build Scalable Web Solutions
                         </span>
                     </h1>
                     <p
                         ref={descRef}
                         className="text-gray-400 text-lg md:text-xl max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed font-light"
                     >
-                        I engineer high-performance web applications with striking visual aesthetics. Let's push the boundaries of what's possible in the browser.
+                        Specializing in building robust full-stack applications with React and Laravel. I focus on creating high-performance, user-centric solutions that provide real business value.
                     </p>
 
                     <div ref={ctaRef} className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start transform-style-3d">
                         <a href="#projects" className="btn-primary group relative overflow-hidden bg-white/5 border border-accent-cyan/30 text-white shadow-[0_0_20px_rgba(0,165,233,0.2)] hover:shadow-[0_0_50px_rgba(0,165,233,0.5)] px-8 py-4 rounded-full transition-all duration-500 hover:-translate-y-2 text-center" style={{ transform: "translateZ(30px)" }}>
                             <span className="relative z-10 font-[family-name:var(--font-space-grotesk)] tracking-wider flex items-center justify-center gap-2">
-                                Initialize Sequence
+                                View Projects
                                 <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                             </span>
                             <div className="absolute inset-0 bg-gradient-to-r from-accent-cyan/20 to-accent-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         </a>
 
-                        <a href="/cv.pdf" download className="btn-outline border-white/20 text-gray-300 hover:text-white hover:border-white/50 px-8 py-4 rounded-full transition-all duration-500 flex items-center justify-center gap-2 font-[family-name:var(--font-space-grotesk)] tracking-wider hover:-translate-y-2 text-center" style={{ transform: "translateZ(20px)" }}>
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                            Download CV
+                        <a href="#contact" className="btn-outline border-white/20 text-gray-300 hover:text-white hover:border-white/50 px-8 py-4 rounded-full transition-all duration-500 flex items-center justify-center gap-2 font-[family-name:var(--font-space-grotesk)] tracking-wider hover:-translate-y-2 text-center" style={{ transform: "translateZ(20px)" }}>
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                            Contact Me
                         </a>
                     </div>
                 </div>
