@@ -128,16 +128,8 @@ const knowledgeBase: { id: string; question: string; answer: string; tags: strin
     },
 ];
 
-const quickReplies = [
-    "What projects have you built?",
-    "Tell me about your E-Commerce app",
-    "What technologies do you use?",
-    "Why should we hire you?",
-    "Do you have any professional experience?",
-    "Are you available? Open to work?",
-    "How can I contact you?",
-    "Where can I see your code?",
-];
+// Derive all quick replies directly from the knowledge base so they always stay in sync
+const quickReplies = knowledgeBase.map((entry) => entry.question);
 
 interface Message {
     from: "user" | "bot";
@@ -308,32 +300,16 @@ export default function ChatBot() {
                             </div>
                         )}
 
-                        {/* Quick Replies */}
-                        {!isTyping && messages.length <= 1 && (
+                        {/* Quick Replies — all questions, always visible */}
+                        {!isTyping && (
                             <div className="pt-2">
                                 <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em] mb-2 pl-1">Quick questions</p>
-                                <div className="flex flex-wrap gap-2">
-                                    {quickReplies.slice(0, 4).map((q) => (
+                                <div className="flex flex-col gap-1.5">
+                                    {quickReplies.map((q) => (
                                         <button
                                             key={q}
                                             onClick={() => sendMessage(q)}
-                                            className="text-[11px] px-3 py-1.5 rounded-full bg-accent-cyan/10 border border-accent-cyan/20 text-accent-cyan hover:bg-accent-cyan/20 transition-colors text-left"
-                                        >
-                                            {q}
-                                        </button>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
-
-                        {!isTyping && messages.length > 1 && (
-                            <div className="pt-1">
-                                <div className="flex flex-wrap gap-1.5">
-                                    {quickReplies.slice(0, 3).map((q) => (
-                                        <button
-                                            key={q}
-                                            onClick={() => sendMessage(q)}
-                                            className="text-[10px] px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
+                                            className="text-[11px] px-3 py-2 rounded-xl bg-white/5 border border-white/8 text-gray-300 hover:bg-accent-cyan/10 hover:border-accent-cyan/30 hover:text-accent-cyan transition-all duration-200 text-left w-full"
                                         >
                                             {q}
                                         </button>
