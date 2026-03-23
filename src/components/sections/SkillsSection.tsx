@@ -120,8 +120,8 @@ export default function SkillsSection() {
             <div className="max-w-7xl mx-auto w-full transform-style-3d">
 
                 {/* Title */}
-                <div ref={titleRef} className="text-center mb-24 relative z-50 transform-style-3d">
-                    <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-[family-name:var(--font-space-grotesk)] mb-6 text-white" style={{ transform: "translateZ(80px)" }}>
+                <div ref={titleRef} className="text-center mb-16 sm:mb-24 relative z-50 transform-style-3d">
+                    <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold font-[family-name:var(--font-space-grotesk)] mb-6 text-white" style={{ transform: "translateZ(80px)" }}>
                         My <span className="gradient-text drop-shadow-[0_0_25px_rgba(0,165,233,0.6)]">Skills</span>
                     </h2>
                     <div className="w-24 h-1.5 bg-gradient-to-r from-accent-cyan via-accent-purple to-pink-500 mx-auto rounded-full shadow-[0_0_20px_rgba(14,165,233,0.5)]" style={{ transform: "translateZ(50px)" }} />
@@ -132,8 +132,8 @@ export default function SkillsSection() {
                     {categories.map((cat) => (
                         <div key={cat} className="space-y-10 transform-style-3d">
                             {/* Category Title */}
-                            <div className="flex items-center gap-6 px-6 transform-style-3d" style={{ transform: "translateZ(40px)" }}>
-                                <h3 className="text-2xl md:text-3xl font-bold text-accent-cyan font-mono tracking-tighter uppercase">
+                            <div className="flex items-center gap-4 sm:gap-6 px-4 sm:px-6 transform-style-3d" style={{ transform: "translateZ(40px)" }}>
+                                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-accent-cyan font-mono tracking-tighter uppercase">
                                     {cat}<span className="text-white/20">_STK</span>
                                 </h3>
                                 <div className="h-[1px] flex-grow bg-gradient-to-r from-accent-cyan/50 to-transparent" />
@@ -141,12 +141,12 @@ export default function SkillsSection() {
 
                             <div
                                 ref={containerRef}
-                                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 px-6 perspective-[3000px] transform-style-3d"
+                                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-12 px-4 sm:px-6 perspective-[3000px] transform-style-3d"
                             >
                                 {skills.filter(s => s.category === cat).map((skill, index) => (
                                     <div
                                         key={skill.name}
-                                        className="skill-card relative h-[360px] glass-strong rounded-[2.5rem] p-8 group cursor-pointer border border-white/5 hover:border-accent-cyan/30 transition-all duration-700 transform-style-3d flex flex-col items-center justify-between"
+                                        className="skill-card relative min-h-[300px] h-auto glass-strong rounded-[2.5rem] p-6 sm:p-8 group cursor-pointer border border-white/5 hover:border-accent-cyan/30 transition-all duration-700 transform-style-3d flex flex-col items-center justify-between"
                                         style={{ transformStyle: "preserve-3d" }}
                                     >
                                         {/* Background Ambient Glow */}

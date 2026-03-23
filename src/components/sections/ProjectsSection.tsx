@@ -131,12 +131,12 @@ export default function ProjectsSection() {
     return (
         <section ref={sectionRef} id="projects" className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-transparent">
             {/* Title */}
-            <div ref={titleRef} className="absolute top-20 z-50 text-center pointer-events-none transform-style-3d">
-                <h2 className="text-4xl md:text-5xl font-bold font-[family-name:var(--font-space-grotesk)] mb-4">
+            <div ref={titleRef} className="text-center mb-12 sm:mb-16 transform-style-3d px-6 absolute top-16 sm:top-20 z-50 pointer-events-none" style={{ transform: "translateZ(50px)" }}>
+                <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold font-[family-name:var(--font-space-grotesk)] mb-4 drop-shadow-[0_0_15px_rgba(0,212,255,0.5)]">
                     My <span className="gradient-text">Projects</span>
                 </h2>
-                <div className="w-20 h-1 bg-gradient-to-r from-accent-cyan to-accent-purple mx-auto rounded-full mb-2" />
-                <p className="text-gray-400 max-w-lg mx-auto bg-black/50 backdrop-blur-md px-6 py-2 rounded-full border border-white/10">
+                <div className="w-16 h-1 bg-gradient-to-r from-accent-cyan to-accent-purple mx-auto rounded-full mb-6" />
+                <p className="text-sm sm:text-base text-gray-400 font-medium tracking-wide max-w-2xl mx-auto bg-black/50 backdrop-blur-md px-4 sm:px-6 py-2 rounded-full border border-white/10">
                     Scroll to rotate the 3D Carousel
                 </p>
             </div>

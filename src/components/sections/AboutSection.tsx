@@ -89,11 +89,11 @@ export default function AboutSection() {
             <div ref={containerRef} className="max-w-7xl mx-auto w-full transform-style-3d will-change-transform">
                 
                 {/* Title Section */}
-                <div ref={titleRef} className="text-center mb-16 md:mb-24 transform-style-3d text-white px-6">
-                    <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold font-[family-name:var(--font-space-grotesk)] mb-6 drop-shadow-[0_0_20px_rgba(14,165,233,0.5)]">
+                <div ref={titleRef} className="text-center mb-12 sm:mb-24 transform-style-3d text-white px-6">
+                    <h2 className="text-3xl sm:text-5xl md:text-7xl font-bold font-[family-name:var(--font-space-grotesk)] mb-6 drop-shadow-[0_0_20px_rgba(14,165,233,0.5)]">
                         Vision & <span className="gradient-text">Identity</span>
                     </h2>
-                    <div className="w-20 sm:w-24 h-1 sm:h-1.5 bg-gradient-to-r from-accent-cyan via-accent-purple to-pink-500 mx-auto rounded-full shadow-[0_0_20px_rgba(14,165,233,0.6)]" />
+                    <div className="w-16 sm:w-24 h-1 sm:h-1.5 bg-gradient-to-r from-accent-cyan via-accent-purple to-pink-500 mx-auto rounded-full shadow-[0_0_20px_rgba(14,165,233,0.6)]" />
                 </div>
 
                 <div className="max-w-5xl mx-auto transform-style-3d px-6">
@@ -111,12 +111,12 @@ export default function AboutSection() {
                             {/* Main Narrative Column */}
                             <div className="lg:col-span-8 space-y-10 transform-style-3d parallax-depth-2">
                                 <div className="space-y-4 transform-style-3d">
-                                    <h3 className="text-3xl sm:text-4xl md:text-6xl font-bold font-[family-name:var(--font-space-grotesk)] leading-tight text-white">
+                                    <h3 className="text-2xl sm:text-4xl md:text-6xl font-bold font-[family-name:var(--font-space-grotesk)] leading-tight text-white">
                                         Crafting the <span className="gradient-text">Digital Nexus</span>
                                     </h3>
-                                    <div className="flex items-center gap-4">
-                                        <span className="h-[2px] w-12 bg-accent-cyan rounded-full" />
-                                        <p className="text-xl text-accent-cyan font-mono tracking-widest uppercase">Full Stack Architect</p>
+                                    <div className="flex items-center gap-3 sm:gap-4">
+                                        <span className="h-[2px] w-8 sm:w-12 bg-accent-cyan rounded-full" />
+                                        <p className="text-base sm:text-xl text-accent-cyan font-mono tracking-widest uppercase">Full Stack Architect</p>
                                     </div>
                                 </div>
 

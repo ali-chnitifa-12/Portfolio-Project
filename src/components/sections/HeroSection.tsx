@@ -160,20 +160,20 @@ export default function HeroSection() {
 
             <div
                 ref={containerRef}
-                className="relative z-10 max-w-7xl mx-auto px-6 pt-24 sm:pt-32 lg:pt-0 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full transform-style-3d will-change-transform"
+                className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full transform-style-3d will-change-transform"
             >
                 {/* Text content */}
                 <div ref={contentRef} className="text-center lg:text-left z-20 transform-style-3d">
                     <p
                         ref={subtitleRef}
-                        className="text-[10px] sm:text-xs md:text-sm text-accent-cyan tracking-[0.3em] sm:tracking-[0.4em] uppercase mb-6 font-[family-name:var(--font-space-grotesk)] w-fit mx-auto lg:mx-0 flex items-center gap-2 leading-relaxed"
+                        className="text-[10px] sm:text-xs md:text-sm text-accent-cyan tracking-[0.3em] sm:tracking-[0.4em] uppercase mb-4 sm:mb-6 font-[family-name:var(--font-space-grotesk)] w-fit mx-auto lg:mx-0 flex items-center gap-2 leading-relaxed"
                     >
                         <span className="w-6 sm:w-8 h-[1px] bg-accent-cyan inline-block shrink-0" />
                         <span>Junior Full-Stack Developer<br className="sm:hidden" /> (React &amp; Laravel)</span>
                     </p>
                     <h1
                         ref={titleRef}
-                        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-[family-name:var(--font-space-grotesk)] leading-[1.1] mb-6 tracking-tight text-white transform-style-3d"
+                        className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-[family-name:var(--font-space-grotesk)] leading-[1.1] mb-4 sm:mb-6 tracking-tight text-white transform-style-3d"
                     >
                         <span
                             ref={nameRef}
@@ -186,7 +186,7 @@ export default function HeroSection() {
                     </h1>
                     <p
                         ref={descRef}
-                        className="text-gray-400 text-base md:text-lg lg:text-xl max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed font-light px-2 sm:px-0"
+                        className="text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl max-w-xl mx-auto lg:mx-0 mb-6 sm:mb-10 leading-relaxed font-light px-2 sm:px-0"
                     >
                         Specializing in building robust full-stack applications with React and Laravel. I focus on high-performance, user-centric solutions that provide real business value.
                     </p>
@@ -208,10 +208,10 @@ export default function HeroSection() {
                 </div>
 
                 {/* Advanced 3D Interactive Geometry */}
-                <div className="flex items-center justify-center lg:justify-end h-[300px] sm:h-[380px] md:h-[480px] perspective-[2000px] z-10 w-full mt-8 md:mt-0 transform-style-3d overflow-visible">
+                <div className="flex items-center justify-center lg:justify-end h-[240px] sm:h-[380px] md:h-[480px] perspective-[2000px] z-10 w-full mt-4 sm:mt-8 md:mt-0 transform-style-3d overflow-visible">
                     <div
                         ref={geometryRef}
-                        className="relative w-56 h-56 sm:w-72 sm:h-72 transform-style-3d will-change-transform"
+                        className="relative w-48 h-48 sm:w-72 sm:h-72 transform-style-3d will-change-transform"
                     >
                         {/* Glow Core */}
                         <div className="absolute inset-0 bg-accent-cyan/30 rounded-full blur-[80px] animate-pulse-glow" style={{ transform: "translateZ(-100px)" }} />

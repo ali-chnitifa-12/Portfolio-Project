@@ -195,12 +195,12 @@ export default function ContactSection() {
 
             <div ref={containerRef} className="max-w-4xl mx-auto w-full transform-style-3d will-change-transform">
                 {/* Section Title */}
-                <div className="text-center mb-16 transform-style-3d" style={{ transform: "translateZ(50px)" }}>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-[family-name:var(--font-space-grotesk)] mb-4 drop-shadow-[0_0_15px_rgba(0,212,255,0.5)]">
+                <div className="text-center mb-12 sm:mb-16 transform-style-3d px-6" style={{ transform: "translateZ(50px)" }}>
+                    <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold font-[family-name:var(--font-space-grotesk)] mb-4 drop-shadow-[0_0_15px_rgba(0,212,255,0.5)]">
                         Get In <span className="gradient-text">Touch</span>
                     </h2>
-                    <div className="w-20 h-1 bg-gradient-to-r from-accent-cyan to-accent-purple mx-auto rounded-full mb-6" />
-                    <p className="text-gray-400 font-medium tracking-wide max-w-2xl mx-auto">
+                    <div className="w-16 h-1 bg-gradient-to-r from-accent-cyan to-accent-purple mx-auto rounded-full mb-6" />
+                    <p className="text-sm sm:text-base text-gray-400 font-medium tracking-wide max-w-2xl mx-auto">
                         I&apos;m currently available for <span className="text-accent-cyan">Junior Developer roles</span> and freelance opportunities. Let&apos;s build something exceptional together.
                     </p>
                 </div>
