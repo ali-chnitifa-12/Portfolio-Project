@@ -160,8 +160,8 @@ export default function ExperienceSection() {
     }, []);
 
     return (
-        <section ref={sectionRef} id="experience" className="section-padding relative z-10 overflow-hidden [perspective:2000px]">
-            <div className="max-w-5xl mx-auto transform-style-3d">
+        <section ref={sectionRef} id="experience" className="section-padding relative z-10 overflow-x-hidden [perspective:2000px]">
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 transform-style-3d">
                 {/* Section Title */}
                 <div className="text-center mb-24 transform-style-3d text-white">
                     <h2
@@ -197,11 +197,11 @@ export default function ExperienceSection() {
                             >
                                 {/* Card Content */}
                                 <div
-                                    className={`w-full md:w-[calc(50%-3rem)] ${index % 2 === 0 ? "md:text-right" : "md:text-left"
-                                        }`}
+                                    className={`w-full md:w-[calc(50%-3rem)] pl-12 md:pl-0 ${index % 2 === 0 ? "md:text-right" : "md:text-left"
+                                    }`}
                                 >
                                     {/* 3D Glass Pane */}
-                                    <div className="glass-strong rounded-3xl p-8 relative overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.6)] border border-white/20 hover:border-accent-cyan/50 hover:shadow-[0_0_60px_rgba(0,212,255,0.3)] transition-colors duration-500 transform-style-3d">
+                                    <div className="glass-strong rounded-3xl p-5 sm:p-8 relative overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.6)] border border-white/20 hover:border-accent-cyan/50 hover:shadow-[0_0_60px_rgba(0,212,255,0.3)] transition-colors duration-500 transform-style-3d">
 
                                         {/* Subtle internal gradient glow */}
                                         <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan/10 to-accent-purple/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />

@@ -143,7 +143,7 @@ export default function HeroSection() {
         <section
             ref={sectionRef}
             id="hero"
-            className="relative min-h-screen flex items-center justify-center overflow-hidden bg-transparent"
+            className="relative min-h-screen flex items-center justify-center bg-transparent"
         >
             {/* Ambient Particles - Only render on client to avoid hydration mismatch */}
             {isMounted && [...Array(6)].map((_, i) => (
@@ -166,14 +166,14 @@ export default function HeroSection() {
                 <div ref={contentRef} className="text-center lg:text-left z-20 transform-style-3d">
                     <p
                         ref={subtitleRef}
-                        className="text-xs md:text-sm text-accent-cyan tracking-[0.4em] uppercase mb-6 font-[family-name:var(--font-space-grotesk)] w-fit mx-auto lg:mx-0 flex items-center gap-3"
+                        className="text-[10px] sm:text-xs md:text-sm text-accent-cyan tracking-[0.3em] sm:tracking-[0.4em] uppercase mb-6 font-[family-name:var(--font-space-grotesk)] w-fit mx-auto lg:mx-0 flex items-center gap-2 leading-relaxed"
                     >
-                        <span className="w-8 h-[1px] bg-accent-cyan inline-block" />
-                        Junior Full-Stack Developer (React & Laravel)
+                        <span className="w-6 sm:w-8 h-[1px] bg-accent-cyan inline-block shrink-0" />
+                        <span>Junior Full-Stack Developer<br className="sm:hidden" /> (React &amp; Laravel)</span>
                     </p>
                     <h1
                         ref={titleRef}
-                        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-[family-name:var(--font-space-grotesk)] leading-[1.1] mb-6 tracking-tight text-white transform-style-3d"
+                        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-[family-name:var(--font-space-grotesk)] leading-[1.1] mb-6 tracking-tight text-white transform-style-3d"
                     >
                         <span
                             ref={nameRef}
@@ -186,9 +186,9 @@ export default function HeroSection() {
                     </h1>
                     <p
                         ref={descRef}
-                        className="text-gray-400 text-lg md:text-xl max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed font-light"
+                        className="text-gray-400 text-base md:text-lg lg:text-xl max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed font-light px-2 sm:px-0"
                     >
-                        Specializing in building robust full-stack applications with React and Laravel. I focus on creating high-performance, user-centric solutions that provide real business value.
+                        Specializing in building robust full-stack applications with React and Laravel. I focus on high-performance, user-centric solutions that provide real business value.
                     </p>
 
                     <div ref={ctaRef} className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start transform-style-3d">
@@ -208,7 +208,7 @@ export default function HeroSection() {
                 </div>
 
                 {/* Advanced 3D Interactive Geometry */}
-                <div className="flex items-center justify-center lg:justify-end h-[350px] md:h-[500px] perspective-[2000px] z-10 w-full mt-10 md:mt-0 transform-style-3d">
+                <div className="flex items-center justify-center lg:justify-end h-[300px] sm:h-[380px] md:h-[480px] perspective-[2000px] z-10 w-full mt-8 md:mt-0 transform-style-3d overflow-visible">
                     <div
                         ref={geometryRef}
                         className="relative w-56 h-56 sm:w-72 sm:h-72 transform-style-3d will-change-transform"
@@ -233,13 +233,13 @@ export default function HeroSection() {
                         <div className="absolute -inset-24 rounded-full border border-pink-500/20 animate-[spin_20s_linear_infinite]" style={{ transform: "translateZ(120px) rotateX(15deg) rotateY(45deg)" }} />
 
                         {/* 3D Floating Node Data */}
-                        <div className="absolute -top-10 -right-5 sm:-right-10 glass-strong px-4 py-2 rounded-xl text-[10px] sm:text-[12px] text-accent-cyan font-mono border border-accent-cyan/30 shadow-[0_0_20px_rgba(14,165,233,0.2)]" style={{ transform: "translateZ(150px) rotateY(-20deg)" }}>
+                        <div className="absolute -top-8 right-0 sm:-top-10 sm:-right-5 md:-right-10 glass-strong px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl text-[9px] sm:text-[11px] text-accent-cyan font-mono border border-accent-cyan/30 shadow-[0_0_20px_rgba(14,165,233,0.2)] z-20" style={{ transform: "translateZ(150px) rotateY(-20deg)" }}>
                             <div className="flex items-center gap-2">
                                 <span className="w-2 h-2 bg-accent-cyan rounded-full animate-pulse" />
                                 SYS: CORE_ONLINE
                             </div>
                         </div>
-                        <div className="absolute -bottom-10 -left-5 sm:-left-10 glass-strong px-4 py-2 rounded-xl text-[10px] sm:text-[12px] text-accent-purple font-mono border border-accent-purple/30 shadow-[0_0_20px_rgba(129,140,248,0.2)]" style={{ transform: "translateZ(130px) rotateY(20deg)" }}>
+                        <div className="absolute -bottom-8 left-0 sm:-bottom-10 sm:-left-5 md:-left-10 glass-strong px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl text-[9px] sm:text-[11px] text-accent-purple font-mono border border-accent-purple/30 shadow-[0_0_20px_rgba(129,140,248,0.2)] z-20" style={{ transform: "translateZ(130px) rotateY(20deg)" }}>
                             STATUS: ENHANCED_3D
                         </div>
                     </div>
