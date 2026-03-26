@@ -29,8 +29,10 @@ export default function HeroSection() {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
+            const isMobile = window.innerWidth < 768;
+
             // --- 0. Setup 3D Space ---
-            gsap.set(sectionRef.current, { perspective: 2000 });
+            gsap.set(sectionRef.current, { perspective: isMobile ? 1000 : 2000 });
             gsap.set(containerRef.current, { transformStyle: "preserve-3d" });
 
             // --- 1. Advanced Cyber Decrypt Entrance ---
@@ -62,20 +64,21 @@ export default function HeroSection() {
             // Elegant high-tech fade up
             tl.from(geometryRef.current, { 
                 scale: 0, 
-                z: -1000, 
+                z: isMobile ? -500 : -1000, 
                 rotationY: 180,
                 opacity: 0, 
                 duration: 2, 
                 ease: "expo.out" 
             })
             .from(contentRef.current, { 
-                x: -100, 
+                x: isMobile ? 0 : -100, 
+                y: isMobile ? 50 : 0,
                 opacity: 0, 
                 duration: 1.5, 
                 ease: "power4.out" 
             }, "-=1.5")
             .from([subtitleRef.current, titleRef.current, descRef.current, ctaRef.current], { 
-                y: 50, 
+                y: 30, 
                 rotateX: -45,
                 opacity: 0, 
                 duration: 1, 
@@ -85,6 +88,7 @@ export default function HeroSection() {
 
             // --- 2. Hyper-Interactive 3D Mouse Tracking ---
             const handleMouseMove = (e: MouseEvent) => {
+                if (isMobile) return; // Disable on mobile/touch
                 const { innerWidth, innerHeight } = window;
                 const x = (e.clientX / innerWidth - 0.5) * 2; // -1 to 1
                 const y = (e.clientY / innerHeight - 0.5) * 2;
@@ -107,17 +111,11 @@ export default function HeroSection() {
                     duration: 1.5,
                     ease: "power3.out"
                 });
-
-                // Parallax background nodes
-                gsap.to(".flying-node", {
-                    x: (i) => x * (50 + i * 20),
-                    y: (i) => y * (50 + i * 20),
-                    duration: 2,
-                    ease: "power1.out"
-                });
             };
 
-            window.addEventListener("mousemove", handleMouseMove);
+            if (!isMobile) {
+                window.addEventListener("mousemove", handleMouseMove);
+            }
 
             // --- 3. Smooth Parallax Scroll-Out ---
             ScrollTrigger.create({
@@ -126,9 +124,9 @@ export default function HeroSection() {
                 end: "bottom top",
                 scrub: true,
                 animation: gsap.to(containerRef.current, {
-                    rotationX: -45,
-                    scale: 0.7,
-                    z: -500,
+                    rotationX: isMobile ? -20 : -45,
+                    scale: isMobile ? 0.9 : 0.7,
+                    z: isMobile ? -200 : -500,
                     opacity: 0,
                     ease: "none"
                 })

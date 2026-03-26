@@ -229,7 +229,7 @@ export default function ChatBot() {
     if (!isVisible) return null;
 
     return (
-        <div className="fixed bottom-6 right-6 z-[1000] flex flex-col items-end gap-3">
+        <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[1000] flex flex-col items-end gap-3">
             {/* Chat Window */}
             <div
                 className={`transition-all duration-500 origin-bottom-right ${
@@ -239,7 +239,7 @@ export default function ChatBot() {
                 }`}
                 style={{ filter: isOpen ? "none" : "blur(4px)" }}
             >
-                <div className="w-[340px] sm:w-[380px] h-[520px] flex flex-col rounded-3xl border border-white/10 shadow-[0_0_60px_rgba(14,165,233,0.15)] overflow-hidden"
+                <div className="w-[calc(100vw-2rem)] sm:w-[380px] h-[500px] sm:h-[520px] flex flex-col rounded-3xl border border-white/10 shadow-[0_0_60px_rgba(14,165,233,0.15)] overflow-hidden"
                     style={{ background: "linear-gradient(145deg, rgba(10,10,26,0.97), rgba(5,5,16,0.99))" }}>
                     
                     {/* Header */}

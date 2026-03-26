@@ -34,10 +34,16 @@ export default function Navbar() {
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         e.preventDefault();
         const el = document.querySelector(href);
-        if (el) {
-            el.scrollIntoView({ behavior: "smooth" });
-        }
+        
+        // Close menu first for better visual feedback
         setIsMobileOpen(false);
+        
+        if (el) {
+            // Slight delay to allow menu closing animation to start
+            setTimeout(() => {
+                el.scrollIntoView({ behavior: "smooth" });
+            }, 100);
+        }
     };
 
     return (
@@ -76,11 +82,11 @@ export default function Navbar() {
                 {/* Mobile Toggle */}
                 <button
                     onClick={() => setIsMobileOpen(!isMobileOpen)}
-                    className="md:hidden flex flex-col gap-1.5 p-2"
+                    className="md:hidden flex flex-col gap-1.5 p-2 z-50"
                     aria-label="Toggle menu"
                 >
                     <span
-                        className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMobileOpen ? "rotate-45 translate-y-2" : ""
+                        className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMobileOpen ? "rotate-45 translate-y-2 text-accent-cyan" : ""
                             }`}
                     />
                     <span
@@ -96,16 +102,16 @@ export default function Navbar() {
 
             {/* Mobile Menu */}
             <div
-                className={`md:hidden bg-black/80 backdrop-blur-2xl border-b border-white/5 overflow-hidden transition-all duration-500 ease-in-out ${isMobileOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+                className={`md:hidden fixed inset-0 z-40 bg-black/95 backdrop-blur-3xl flex flex-col items-center justify-center transition-all duration-500 ease-in-out ${isMobileOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
                     }`}
             >
-                <div className="p-8 flex flex-col gap-6 items-center">
+                <div className="flex flex-col gap-8 items-center">
                     {navLinks.map((link) => (
                         <a
                             key={link.href}
                             href={link.href}
                             onClick={(e) => handleClick(e, link.href)}
-                            className="text-gray-300 hover:text-accent-cyan transition-colors text-xl font-medium tracking-wide"
+                            className="text-gray-300 hover:text-accent-cyan transition-colors text-3xl font-bold tracking-widest font-[family-name:var(--font-space-grotesk)]"
                         >
                             {link.label}
                         </a>

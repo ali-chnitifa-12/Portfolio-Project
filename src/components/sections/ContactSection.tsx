@@ -140,10 +140,16 @@ export default function ContactSection() {
                 body: JSON.stringify(formData),
             });
 
-            const data = await res.json();
+            let data;
+            try {
+                data = await res.json();
+            } catch (err) {
+                console.error("Failed to parse response as JSON:", err);
+                throw new Error('Server returned an invalid response. Please try again later.');
+            }
 
             if (!res.ok) {
-                throw new Error(data.error || 'Failed to send message');
+                throw new Error(data.error || `Error ${res.status}: Failed to send message`);
             }
 
             // Crazy shatter animation on submit ONLY on success
@@ -219,7 +225,7 @@ export default function ContactSection() {
                                 value={formData.name}
                                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                 placeholder="Your Name"
-                                className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-accent-cyan focus:shadow-[0_0_30px_rgba(0,212,255,0.2)] transition-all duration-300"
+                                className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-accent-cyan focus:shadow-[0_0_30px_rgba(0,212,255,0.2)] transition-all duration-300"
                                 required
                             />
                         </div>
@@ -230,7 +236,7 @@ export default function ContactSection() {
                                 value={formData.email}
                                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                 placeholder="Your Email"
-                                className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-accent-cyan focus:shadow-[0_0_30px_rgba(0,212,255,0.2)] transition-all duration-300"
+                                className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-accent-cyan focus:shadow-[0_0_30px_rgba(0,212,255,0.2)] transition-all duration-300"
                                 required
                             />
                         </div>
@@ -241,13 +247,13 @@ export default function ContactSection() {
                                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                 placeholder="Message"
                                 rows={5}
-                                className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-accent-cyan focus:shadow-[0_0_30px_rgba(0,212,255,0.2)] transition-all duration-300 resize-none"
+                                className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-accent-cyan focus:shadow-[0_0_30px_rgba(0,212,255,0.2)] transition-all duration-300 resize-none"
                                 required
                             />
                         </div>
 
                         <button type="submit" disabled={isSubmitting} className="btn-primary w-full justify-center group relative overflow-hidden h-14 disabled:opacity-50 disabled:cursor-not-allowed">
-                            <span className="relative z-10 font-[family-name:var(--font-space-grotesk)] tracking-wider">
+                            <span className="relative z-10 font-[family-name:var(--font-space-grotesk)] tracking-wider text-white">
                                 {isSubmitting ? "TRANSMITTING..." : "Send Message"}
                             </span>
                             {/* Hover galaxy effect on button */}
