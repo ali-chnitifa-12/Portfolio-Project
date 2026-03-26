@@ -229,12 +229,12 @@ export default function ChatBot() {
     if (!isVisible) return null;
 
     return (
-        <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[1000] flex flex-col items-end gap-3">
+        <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[1000] flex flex-col items-end gap-3 pointer-events-none">
             {/* Chat Window */}
             <div
                 className={`transition-all duration-500 origin-bottom-right ${
                     isOpen
-                        ? "opacity-100 scale-100 translate-y-0"
+                        ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
                         : "opacity-0 scale-90 translate-y-4 pointer-events-none"
                 }`}
                 style={{ filter: isOpen ? "none" : "blur(4px)" }}
@@ -351,7 +351,7 @@ export default function ChatBot() {
             {/* Floating Button */}
             <button
                 onClick={() => setIsOpen((prev) => !prev)}
-                className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-cyan to-accent-purple shadow-[0_0_30px_rgba(14,165,233,0.4)] hover:shadow-[0_0_50px_rgba(14,165,233,0.6)] flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 group"
+                className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-cyan to-accent-purple shadow-[0_0_30px_rgba(14,165,233,0.4)] hover:shadow-[0_0_50px_rgba(14,165,233,0.6)] flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 group pointer-events-auto"
                 aria-label="Open AI Chat"
             >
                 {/* Pulse ring */}
