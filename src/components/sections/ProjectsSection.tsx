@@ -38,6 +38,16 @@ const projects = [
         gradient: "from-emerald-500/20 to-cyan-500/20",
     },
     {
+        title: "Restaurant Platform",
+        description: "Designed and built a modern restaurant showcase platform with rich menu displays, table reservation flow, and an immersive visual experience to drive customer engagement.",
+        image: "/projects/restaurant.png",
+        tech: ["React", "TailwindCSS", "GSAP", "Node.js"],
+        features: ["Menu Management", "Table Booking", "Smooth Animations", "Responsive UI"],
+        liveLink: "#",
+        githubLink: "https://github.com/ali-chnitifa-12",
+        gradient: "from-orange-500/20 to-red-500/20",
+    },
+    {
         title: "FitTrack",
         description: "A comprehensive fitness & wellness platform covering nutrition, supplements, flexibility, mindfulness, progress tracking, and community support — all in one sleek dashboard.",
         image: "/projects/fittrack.png",
