@@ -105,8 +105,10 @@ export default function ProjectsSection() {
             });
 
             // The main rotation of the entire carousel
+            // Rotate only (n-1)/n of a full circle so the first card doesn't reappear at the end
+            const maxRotation = -360 * ((totalCards - 1) / totalCards);
             tl.to(carouselRef.current, {
-                rotationY: -360, // rotate a full circle as user scrolls
+                rotationY: maxRotation,
                 ease: "none",
                 duration: 1
             });
