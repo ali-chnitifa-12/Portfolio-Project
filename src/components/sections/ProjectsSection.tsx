@@ -47,6 +47,16 @@ const projects = [
         githubLink: "https://github.com/ali-chnitifa-12",
         gradient: "from-orange-500/20 to-red-500/20",
     },
+    {
+        title: "FitTrack",
+        description: "A comprehensive fitness & wellness platform covering nutrition, supplements, flexibility, mindfulness, progress tracking, and community support — all in one sleek dashboard.",
+        image: "/projects/fittrack.png",
+        tech: ["React", "TailwindCSS", "Chart.js", "Node.js"],
+        features: ["Progress Tracking", "Nutrition Guide", "Community", "Mindfulness"],
+        liveLink: "#",
+        githubLink: "https://github.com/ali-chnitifa-12",
+        gradient: "from-teal-500/20 to-green-500/20",
+    },
 ];
 
 export default function ProjectsSection() {
