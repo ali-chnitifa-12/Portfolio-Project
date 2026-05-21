@@ -162,12 +162,20 @@ export default function HeroSection() {
             >
                 {/* Text content */}
                 <div ref={contentRef} className="text-center lg:text-left z-20 transform-style-3d">
+                    {/* Availability Badge */}
+                    <div className="w-fit mx-auto lg:mx-0 mb-4 sm:mb-5 flex items-center gap-2 px-4 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 backdrop-blur-sm">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+                        </span>
+                        <span className="text-[10px] sm:text-xs text-emerald-400 font-mono tracking-wider uppercase">Open to Opportunities</span>
+                    </div>
                     <p
                         ref={subtitleRef}
                         className="text-[10px] sm:text-xs md:text-sm text-accent-cyan tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4 sm:mb-6 font-medium font-[family-name:var(--font-space-grotesk)] w-fit mx-auto lg:mx-0 flex items-center gap-2 leading-relaxed"
                     >
                         <span className="w-6 sm:w-8 h-[1px] bg-accent-cyan inline-block shrink-0" />
-                        <span>Hi I'm Ali and I'm a Junior Full-Stack Developer<br className="sm:hidden" /> (React &amp; Laravel)</span>
+                        <span>Hi I&apos;m Ali — Full-Stack Developer<br className="sm:hidden" /> (React &amp; Laravel)</span>
                     </p>
                     <h1
                         ref={titleRef}
