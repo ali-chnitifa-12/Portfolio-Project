@@ -10,7 +10,7 @@ const projects = [
     {
         title: "Klawdz Vaping Shop",
         description: "A premium e-commerce store built for Klawdz Vaping Products featuring product categories, custom search filtering, interactive cart system, price range slider, and instant WhatsApp order integration.",
-        image: "/projects/ecommerce.png",
+        image: "/projects/klawdz.png",
         tech: ["React", "Next.js", "TailwindCSS", "E-Commerce", "REST API"],
         features: ["Shop Catalog", "Price Filter", "WhatsApp Order", "Cart System"],
         liveLink: "https://klawdz.com/shop",
@@ -30,7 +30,7 @@ const projects = [
     {
         title: "Snapchat Men Luxury Store",
         description: "Exclusive luxury menswear and sneakers boutique platform. Features collection filters for Air Jordans & streetwear, interactive search, stock badges, and smooth animations.",
-        image: "/projects/ecommerce.png",
+        image: "/projects/snapchatmen.png",
         tech: ["React", "Laravel", "TailwindCSS", "GSAP", "MySQL"],
         features: ["Luxury Collection", "Category Filter", "Stock Management", "Responsive UI"],
         liveLink: "https://snapchat-men-website.vercel.app/",
