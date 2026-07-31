@@ -12,6 +12,7 @@ import ContactSection from "@/components/sections/ContactSection";
 import ResumeSection from "@/components/sections/ResumeSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import CustomCursor from "@/components/CustomCursor";
+import ScrollCreativeEffects from "@/components/ScrollCreativeEffects";
 
 // Dynamically import heavy client-side components
 const StarfieldBackground = dynamic(
@@ -30,6 +31,7 @@ export default function Home() {
     <>
       <CustomCursor />
       <LoadingScreen />
+      <ScrollCreativeEffects />
       <StarfieldBackground />
       <Navbar />
 
@@ -48,3 +50,4 @@ export default function Home() {
     </>
   );
 }
+
