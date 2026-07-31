@@ -170,15 +170,22 @@ function formatText(text: string): React.ReactNode[] {
     });
 }
 
+// Conversation history for OpenAI context
+interface ChatMessage {
+    role: "user" | "assistant";
+    content: string;
+}
+
 export default function ChatBot() {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState<Message[]>([
         {
             from: "bot",
-            text: "Hey! 👋 I'm Ali's AI assistant. Ask me anything about his skills, projects, or availability — or pick a quick question below.",
+            text: "Hey! 👋 I'm Ali's AI assistant powered by GPT-4o. Ask me anything about his skills, projects, or availability — or pick a quick question below.",
             id: 0,
         },
     ]);
+    const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
     const [input, setInput] = useState("");
     const [isTyping, setIsTyping] = useState(false);
     const [hasNotification, setHasNotification] = useState(true);
@@ -204,22 +211,49 @@ export default function ChatBot() {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     }, [messages, isTyping]);
 
-    const sendMessage = (text: string) => {
+    const sendMessage = async (text: string) => {
         if (!text.trim() || isTyping) return;
 
-        const userMsg: Message = { from: "user", text: text.trim(), id: idRef.current++ };
+        const userText = text.trim();
+        const userMsg: Message = { from: "user", text: userText, id: idRef.current++ };
         setMessages((prev) => [...prev, userMsg]);
         setInput("");
         setIsTyping(true);
 
-        // Simulate natural typing delay
-        const delay = 800 + Math.random() * 600;
-        setTimeout(() => {
-            const answer = findAnswer(text);
+        // Build updated history including this new message
+        const updatedHistory: ChatMessage[] = [
+            ...chatHistory,
+            { role: "user", content: userText },
+        ];
+
+        try {
+            const res = await fetch("/api/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ messages: updatedHistory }),
+            });
+
+            const data = await res.json();
+            const answer: string = data.reply ?? "Sorry, I couldn't get a response. Please try again or email Alichnitifa30@gmail.com directly!";
+
+            // Save assistant reply to history for context
+            setChatHistory([
+                ...updatedHistory,
+                { role: "assistant", content: answer },
+            ]);
+
             const botMsg: Message = { from: "bot", text: answer, id: idRef.current++ };
             setMessages((prev) => [...prev, botMsg]);
+        } catch {
+            const errMsg: Message = {
+                from: "bot",
+                text: "⚠️ Connection issue. Please try again or reach Ali directly at Alichnitifa30@gmail.com!",
+                id: idRef.current++,
+            };
+            setMessages((prev) => [...prev, errMsg]);
+        } finally {
             setIsTyping(false);
-        }, delay);
+        }
     };
 
     const handleKeyDown = (e: React.KeyboardEvent) => {
