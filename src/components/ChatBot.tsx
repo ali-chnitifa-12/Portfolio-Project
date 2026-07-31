@@ -220,17 +220,22 @@ export default function ChatBot() {
         setInput("");
         setIsTyping(true);
 
-        // Build updated history including this new message
-        const updatedHistory: ChatMessage[] = [
+        // Build updated history matching route.ts expected array format: { role: 'user' | 'assistant', content: string }
+        const updatedHistory = [
             ...chatHistory,
-            { role: "user", content: userText },
+            { role: "user" as const, content: userText }
         ];
 
         try {
             const res = await fetch("/api/chat", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ messages: updatedHistory }),
+                body: JSON.stringify({ 
+                    messages: updatedHistory.map(msg => ({
+                        role: msg.role,
+                        content: msg.content
+                    }))
+                }),
             });
 
             const data = await res.json();
@@ -239,7 +244,7 @@ export default function ChatBot() {
             // Save assistant reply to history for context
             setChatHistory([
                 ...updatedHistory,
-                { role: "assistant", content: answer },
+                { role: "assistant" as const, content: answer },
             ]);
 
             const botMsg: Message = { from: "bot", text: answer, id: idRef.current++ };
@@ -330,24 +335,6 @@ export default function ChatBot() {
                                     <span className="w-1.5 h-1.5 bg-accent-cyan/70 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
                                     <span className="w-1.5 h-1.5 bg-accent-cyan/70 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
                                     <span className="w-1.5 h-1.5 bg-accent-cyan/70 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
-                                </div>
-                            </div>
-                        )}
-
-                        {/* Quick Replies — all questions, always visible */}
-                        {!isTyping && (
-                            <div className="pt-2">
-                                <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em] mb-2 pl-1">Quick questions</p>
-                                <div className="flex flex-col gap-1.5">
-                                    {quickReplies.map((q) => (
-                                        <button
-                                            key={q}
-                                            onClick={() => sendMessage(q)}
-                                            className="text-[11px] px-3 py-2 rounded-xl bg-white/5 border border-white/8 text-gray-300 hover:bg-accent-cyan/10 hover:border-accent-cyan/30 hover:text-accent-cyan transition-all duration-200 text-left w-full"
-                                        >
-                                            {q}
-                                        </button>
-                                    ))}
                                 </div>
                             </div>
                         )}
