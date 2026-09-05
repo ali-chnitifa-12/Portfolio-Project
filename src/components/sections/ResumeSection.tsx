@@ -46,11 +46,18 @@ const resumeData = {
     ],
     projects: [
         {
+            name: "Hanibal Games - Pack Builder",
+            desc: "Plateforme e-commerce gaming avec catalogue de +200 jeux, filtres par catégorie (Denuvo, 3rd Party, Simulators), calcul automatique de pack et commande instantanée via WhatsApp.",
+            stack: ["React", "Next.js", "TailwindCSS", "E-Commerce", "REST API"],
+            link: "https://hanibal-games.vercel.app/",
+            highlight: true,
+        },
+        {
             name: "FitTrack AI Fitness Dashboard",
             desc: "Application fitness avec calories/macros, routines personnalisées, challenges et analytics. Intégration OpenAI pour recommandations nutritionnelles et AI Food Scanner basé image.",
             stack: ["React", "Node.js", "Express.js", "TailwindCSS", "Framer Motion", "OpenAI API"],
             link: "https://fiitnesstracking.vercel.app/dashboard",
-            highlight: true,
+            highlight: false,
         },
         {
             name: "E-Commerce Ecosystem",
@@ -68,6 +75,7 @@ const resumeData = {
         },
     ],
     personalProjects: [
+        { name: "Hanibal Games", desc: "Catalogue de 200+ jeux, pack builder et WhatsApp Checkout." },
         { name: "Car Rental Platform", desc: "Pricing dynamique, UI 3D et responsive." },
         { name: "Snapchat Men Luxury Store", desc: "Filtres, recherche, stock badges et animations." },
         { name: "Klawdz Vaping Shop", desc: "Catalogue, panier, filtres de prix et commande WhatsApp." }

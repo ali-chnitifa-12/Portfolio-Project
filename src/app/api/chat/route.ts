@@ -32,12 +32,13 @@ Here is Ali's complete profile:
 - Tools: Git, GitHub, Postman, UML, Agile/Scrum, WordPress, n8n, OpenAI API
 
 **Projects:**
-1. **FitTrack AI Fitness Dashboard** (fiitnesstracking.vercel.app/dashboard) — Full-stack fitness tracking app with calorie/macro calculator, custom routines, challenges, analytics, and OpenAI integration (nutrition recommendations & AI Food Scanner).
-2. **E-Commerce Ecosystem** (ecommerce-app-nine-gules.vercel.app) — Full-stack e-commerce with JWT auth, admin dashboard, product CRUD, cart system, MySQL, REST API.
-3. **Luxury Hotel Booking Engine** (hotel-booking-three-xi.vercel.app) — Premium reservation system with 5-step booking flow, real-time state sync, immersive UI animations.
-4. **Car Rental Platform** — Dynamic pricing, 3D interactive UI, responsive design.
-5. **Snapchat Men Luxury Store** — Filters, search, stock badges, animations.
-6. **Klawdz Vaping Shop** — Catalog, cart, price filters, WhatsApp ordering.
+1. **Hanibal Games - Pack Builder** (hanibal-games.vercel.app) — Custom digital gaming store & pack builder platform featuring 200+ game catalog titles, genre filters (Denuvo, 3rd Party, Simulators), live pack price calculation, and WhatsApp checkout integration.
+2. **FitTrack AI Fitness Dashboard** (fiitnesstracking.vercel.app/dashboard) — Full-stack fitness tracking app with calorie/macro calculator, custom routines, challenges, analytics, and OpenAI integration (nutrition recommendations & AI Food Scanner).
+3. **E-Commerce Ecosystem** (ecommerce-app-nine-gules.vercel.app) — Full-stack e-commerce with JWT auth, admin dashboard, product CRUD, cart system, MySQL, REST API.
+4. **Luxury Hotel Booking Engine** (hotel-booking-three-xi.vercel.app) — Premium reservation system with 5-step booking flow, real-time state sync, immersive UI animations.
+5. **Car Rental Platform** — Dynamic pricing, 3D interactive UI, responsive design.
+6. **Snapchat Men Luxury Store** — Filters, search, stock badges, animations.
+7. **Klawdz Vaping Shop** — Catalog, cart, price filters, WhatsApp ordering.
 
 **Contact:**
 - Email: alichnitifa30@gmail.com

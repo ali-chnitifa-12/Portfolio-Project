@@ -8,6 +8,16 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
     {
+        title: "Hanibal Games - Pack Builder",
+        description: "A custom digital gaming store & custom pack builder platform featuring 200+ game catalog titles, game genre filters (Denuvo, 3rd Party, Simulators), real-time pack price calculator, and instant WhatsApp checkout integration.",
+        image: "/projects/hanibal.png",
+        tech: ["React", "Next.js", "TailwindCSS", "E-Commerce", "REST API"],
+        features: ["200+ Games Catalog", "Category Filter", "Pack Builder", "WhatsApp Checkout"],
+        liveLink: "https://hanibal-games.vercel.app/",
+        githubLink: "https://github.com/ali-chnitifa-12",
+        gradient: "from-purple-600/30 to-cyan-600/30",
+    },
+    {
         title: "Klawdz Vaping Shop",
         description: "A premium e-commerce store built for Klawdz Vaping Products featuring product categories, custom search filtering, interactive cart system, price range slider, and instant WhatsApp order integration.",
         image: "/projects/klawdz.png",
