@@ -4,6 +4,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { sound } from "@/lib/sounds";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -156,20 +157,41 @@ export default function HeroSection() {
         e.preventDefault();
         const cmd = terminalCommand.trim().toLowerCase();
         setTerminalCommand("");
+        sound.playClick();
+
+        const scrollToSection = (id: string) => {
+            const el = document.querySelector(id);
+            if (el) {
+                el.scrollIntoView({ behavior: "smooth" });
+            }
+        };
 
         if (cmd === "help") {
-            setTerminalOutput("Available: skills, contact, cv, clear, matrix, hire");
+            setTerminalOutput("Commands: projects, skills, experience, contact, about, cv, matrix, clear, help");
+        } else if (cmd === "projects") {
+            setTerminalOutput("Navigating to Projects section...");
+            scrollToSection("#projects");
         } else if (cmd === "skills") {
-            setTerminalOutput("React.js, Next.js, TypeScript, Laravel, MySQL, REST API, GSAP, Tailwind");
+            setTerminalOutput("Navigating to Skills section...");
+            scrollToSection("#skills");
+        } else if (cmd === "experience") {
+            setTerminalOutput("Navigating to Experience section...");
+            scrollToSection("#experience");
         } else if (cmd === "contact") {
-            setTerminalOutput("Email: alichnitifa30@gmail.com | Phone: 0691522871");
+            setTerminalOutput("Navigating to Contact section...");
+            scrollToSection("#contact");
+        } else if (cmd === "about") {
+            setTerminalOutput("Navigating to About section...");
+            scrollToSection("#about");
         } else if (cmd === "cv") {
-            setTerminalOutput("Downloading CV...");
+            sound.playSuccess();
+            setTerminalOutput("Downloading Ali's official CV (PDF)...");
             window.open("/cv.pdf", "_blank");
         } else if (cmd === "clear") {
             setTerminalOutput(null);
         } else if (cmd === "hire" || cmd === "matrix") {
-            setTerminalOutput("🚀 ACCESS GRANTED. Let's create something extraordinary together!");
+            sound.playSuccess();
+            setTerminalOutput("🚀 ACCESS GRANTED! Welcome aboard. Contact Ali at alichnitifa30@gmail.com!");
         } else {
             setTerminalOutput(`Unknown command: '${cmd}'. Type 'help' for options.`);
         }
