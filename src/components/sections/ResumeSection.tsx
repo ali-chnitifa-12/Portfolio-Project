@@ -8,65 +8,109 @@ gsap.registerPlugin(ScrollTrigger);
 
 const resumeData = {
     name: "ALI CHNITIFA",
-    title: "Junior Full-Stack Developer",
-    subtitle: "React · Laravel · MySQL · REST APIs",
-    location: "Safi, Morocco",
-    email: "Alichnitifa30@gmail.com",
+    title: "Développeur Web Full-Stack",
+    subtitle: "React · Laravel · MySQL · Node.js · Next.js",
+    location: "Safi, Maroc",
+    email: "alichnitifa30@gmail.com",
     linkedin: "linkedin.com/in/ali-chnitifa-7926b5290",
     github: "github.com/ali-chnitifa-12",
-    profile: "Junior Full-Stack Developer with hands-on experience building end-to-end web applications using React and Laravel. I design scalable REST APIs, model relational databases in MySQL, and create intuitive user interfaces. Focused on code quality, performance, and real-world impact.",
+    profile: "Développeur Web Full-Stack junior avec expérience pratique dans la création d'applications end-to-end avec React et Laravel. Je conçois des API REST fiables, des bases de données MySQL et des interfaces responsives orientées utilisateur.",
     skills: {
-        frontend: ["React.js", "Next.js", "JavaScript", "TailwindCSS", "Redux", "GSAP"],
-        backend: ["Laravel", "PHP", "Node.js", "Express.js", "REST API"],
-        database: ["MySQL", "MongoDB"],
-        tools: ["Git", "GitHub", "Postman", "UML", "Agile/Scrum"]
+        frontend: ["React.js", "Next.js", "JavaScript", "TypeScript", "TailwindCSS", "Redux", "GSAP", "Framer Motion"],
+        backend: ["Laravel", "PHP", "Node.js", "Express.js", "REST API", "Laravel Sanctum"],
+        database: ["MySQL", "MongoDB", "PostgreSQL", "Oracle Admin"],
+        tools: ["Git", "GitHub", "Postman", "UML", "Agile/Scrum", "WordPress", "n8n", "OpenAI API"]
     },
     experience: [
         {
-            company: "MarsaMaroc",
-            role: "Web Development Intern",
-            date: "Mar 2024 – May 2024",
+            company: "Freelance",
+            role: "Freelance Full-Stack Developer",
+            date: "2024 – Présent",
             bullets: [
-                "Developed an internal web application for employee tracking and management.",
-                "Implemented role-based authentication and access control with Laravel Sanctum.",
-                "Designed and built a REST API consumed by a React frontend.",
-                "Created normalized MySQL schema for employee records and reporting.",
+                "Développement d'applications web modernes avec React, Next.js, Node.js et MongoDB.",
+                "Création d'interfaces responsives et animées avec TailwindCSS, GSAP et Framer Motion.",
+            ],
+            stack: ["React", "Next.js", "Node.js", "MongoDB", "TailwindCSS", "GSAP", "Framer Motion"]
+        },
+        {
+            company: "MarsaMaroc, Safi",
+            role: "Stagiaire Développeur Web",
+            date: "Mars – Mai 2024",
+            bullets: [
+                "Développement d'une application web interne pour le suivi et la gestion des employés.",
+                "Mise en place de l'authentification par rôles et du contrôle d'accès avec Laravel Sanctum.",
+                "Conception d'API REST consommées par un frontend React et structuration d'une base MySQL normalisée.",
             ],
             stack: ["React.js", "Laravel", "MySQL", "Tailwind CSS"]
         }
     ],
     projects: [
         {
-            name: "E-Commerce Ecosystem",
-            desc: "Full-stack commerce platform with JWT authentication, admin dashboard, product CRUD, cart system, and a custom-designed REST API.",
-            stack: ["React", "Laravel", "MySQL", "Redux"],
+            name: "FitTrack AI Fitness Dashboard",
+            desc: "Application fitness avec calories/macros, routines personnalisées, challenges et analytics. Intégration OpenAI pour recommandations nutritionnelles et AI Food Scanner basé image.",
+            stack: ["React", "Node.js", "Express.js", "TailwindCSS", "Framer Motion", "OpenAI API"],
+            link: "https://fiitnesstracking.vercel.app/dashboard",
             highlight: true,
         },
         {
-            name: "Luxury Hotel Booking Engine",
-            desc: "Premium reservation system with a 5-step booking flow, real-time state synchronization, and immersive 3D animation UI.",
-            stack: ["React", "Redux", "GSAP", "Tailwind"],
+            name: "E-Commerce Ecosystem",
+            desc: "Plateforme e-commerce avec JWT auth, admin dashboard, Product CRUD, panier et API REST. Base de données MySQL et interface responsive orientée expérience utilisateur.",
+            stack: ["React", "Laravel", "MySQL", "Redux", "REST API"],
+            link: "https://ecommerce-app-nine-gules.vercel.app",
             highlight: false,
         },
         {
-            name: "Car Rental Platform",
-            desc: "High-performance rental platform with dynamic pricing, 3D car configurator, and a fully responsive mobile design.",
-            stack: ["React", "Three.js", "TailwindCSS"],
+            name: "Luxury Hotel Booking Engine",
+            desc: "Système de réservation premium avec flow en 5 étapes, gestion d'état temps réel et animations immersives.",
+            stack: ["React", "Redux", "GSAP", "TailwindCSS"],
+            link: "https://hotel-booking-three-xi.vercel.app",
             highlight: false,
         },
+    ],
+    personalProjects: [
+        { name: "Car Rental Platform", desc: "Pricing dynamique, UI 3D et responsive." },
+        { name: "Snapchat Men Luxury Store", desc: "Filtres, recherche, stock badges et animations." },
+        { name: "Klawdz Vaping Shop", desc: "Catalogue, panier, filtres de prix et commande WhatsApp." }
     ],
     education: [
         {
-            school: "ISTA NTIC Safi",
-            degree: "Diploma in Digital Development",
+            school: "École High Tech, Rabat",
+            degree: "Licence professionnelle en Génie Informatique",
+            date: "2025 – Présent",
+            detail: "Formation supérieure spécialisée en ingénierie informatique et développement logiciel."
+        },
+        {
+            school: "ISTA NTIC, Safi",
+            degree: "Technicien spécialisé en Développement Digital, option Full-Stack",
             date: "2022 – 2024",
-            detail: "Full-stack web dev, databases, UML, Agile methodologies."
+            detail: "Développement web full-stack, bases de données, UML, méthodologies Agile."
+        },
+        {
+            school: "Lycée Mohamed Ben Hassan El Ouazzani, Safi",
+            degree: "Baccalauréat en Sciences Physiques",
+            date: "2020 – 2021",
+            detail: "Formation scientifique axée sur la physique-chimie et les mathématiques."
         }
     ],
+    certifications: [
+        {
+            title: "Developing Front-End Apps with React",
+            issuer: "IBM",
+            date: "Apr 2026",
+            id: "M2FG36DXDWOJ"
+        },
+        {
+            title: "Maximize Productivity With AI Tools",
+            issuer: "Google",
+            date: "Apr 2026",
+            id: "N3QYRCNT85JO"
+        }
+    ],
+    softSkills: ["Gestion du temps", "Travail en équipe", "Résolution de problèmes", "Adaptabilité"],
     languages: [
-        { lang: "Arabic", level: "Native" },
-        { lang: "French", level: "Intermediate" },
-        { lang: "English", level: "Intermediate" },
+        { lang: "Arabe", level: "Langue maternelle" },
+        { lang: "Français", level: "Intermédiaire" },
+        { lang: "Anglais", level: "Intermédiaire" },
     ]
 };
 
@@ -134,7 +178,7 @@ export default function ResumeSection() {
                             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-accent-cyan to-accent-blue text-white font-semibold text-sm hover:shadow-[0_0_30px_rgba(14,165,233,0.4)] transition-all duration-300 hover:-translate-y-1"
                         >
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                            Download PDF Resume
+                            Télécharger CV (PDF)
                         </a>
                     </div>
                 </div>
@@ -148,7 +192,7 @@ export default function ResumeSection() {
                         <div className="resume-item glass-fast rounded-2xl p-7 border border-white/8 hover:border-accent-cyan/20 transition-colors">
                             <h4 className="text-sm font-bold text-white mb-4 flex items-center gap-2 uppercase tracking-widest">
                                 <span className="w-2 h-2 bg-accent-cyan rounded-full shadow-[0_0_8px_rgba(14,165,233,0.8)]" />
-                                Profile
+                                Profil
                             </h4>
                             <p className="text-gray-400 text-sm leading-relaxed">{resumeData.profile}</p>
                         </div>
@@ -157,7 +201,7 @@ export default function ResumeSection() {
                         <div className="resume-item glass-fast rounded-2xl p-7 border border-white/8 hover:border-accent-purple/20 transition-colors">
                             <h4 className="text-sm font-bold text-white mb-6 flex items-center gap-2 uppercase tracking-widest">
                                 <span className="w-2 h-2 bg-accent-purple rounded-full shadow-[0_0_8px_rgba(129,140,248,0.8)]" />
-                                Technical Stack
+                                Compétences Techniques
                             </h4>
                             <div className="space-y-5">
                                 <div>
@@ -177,7 +221,7 @@ export default function ResumeSection() {
                                     </div>
                                 </div>
                                 <div>
-                                    <p className="text-[10px] text-gray-500 uppercase tracking-[0.3em] mb-2 font-bold">Database</p>
+                                    <p className="text-[10px] text-gray-500 uppercase tracking-[0.3em] mb-2 font-bold">Bases de données</p>
                                     <div className="flex flex-wrap gap-1.5">
                                         {resumeData.skills.database.map(s => (
                                             <span key={s} className="px-2.5 py-1 bg-blue-500/10 rounded-lg text-[11px] text-blue-300 border border-blue-500/20 font-mono">{s}</span>
@@ -185,7 +229,7 @@ export default function ResumeSection() {
                                     </div>
                                 </div>
                                 <div>
-                                    <p className="text-[10px] text-gray-500 uppercase tracking-[0.3em] mb-2 font-bold">Tools</p>
+                                    <p className="text-[10px] text-gray-500 uppercase tracking-[0.3em] mb-2 font-bold">Outils</p>
                                     <div className="flex flex-wrap gap-1.5">
                                         {resumeData.skills.tools.map(s => (
                                             <span key={s} className="px-2.5 py-1 bg-white/5 rounded-lg text-[11px] text-gray-400 border border-white/10 font-mono">{s}</span>
@@ -195,11 +239,45 @@ export default function ResumeSection() {
                             </div>
                         </div>
 
+                        {/* Certifications */}
+                        <div className="resume-item glass-fast rounded-2xl p-7 border border-white/8 hover:border-yellow-500/20 transition-colors">
+                            <h4 className="text-sm font-bold text-white mb-5 flex items-center gap-2 uppercase tracking-widest">
+                                <span className="w-2 h-2 bg-yellow-400 rounded-full shadow-[0_0_8px_rgba(250,204,21,0.8)]" />
+                                Certifications
+                            </h4>
+                            <div className="space-y-4">
+                                {resumeData.certifications.map((c, idx) => (
+                                    <div key={idx} className="border-b border-white/5 pb-3 last:border-0 last:pb-0">
+                                        <p className="text-xs font-bold text-white">{c.title}</p>
+                                        <div className="flex justify-between items-center mt-1">
+                                            <span className="text-[11px] text-accent-cyan">{c.issuer} ({c.date})</span>
+                                        </div>
+                                        <p className="text-[10px] text-gray-500 font-mono mt-0.5">ID: {c.id}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Soft Skills */}
+                        <div className="resume-item glass-fast rounded-2xl p-7 border border-white/8">
+                            <h4 className="text-sm font-bold text-white mb-5 flex items-center gap-2 uppercase tracking-widest">
+                                <span className="w-2 h-2 bg-teal-400 rounded-full shadow-[0_0_8px_rgba(45,212,191,0.8)]" />
+                                Soft Skills
+                            </h4>
+                            <div className="flex flex-wrap gap-2">
+                                {resumeData.softSkills.map(skill => (
+                                    <span key={skill} className="px-3 py-1 bg-teal-500/10 rounded-lg text-xs text-teal-300 border border-teal-500/20 font-medium">
+                                        {skill}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+
                         {/* Languages */}
                         <div className="resume-item glass-fast rounded-2xl p-7 border border-white/8">
                             <h4 className="text-sm font-bold text-white mb-5 flex items-center gap-2 uppercase tracking-widest">
                                 <span className="w-2 h-2 bg-emerald-400 rounded-full shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
-                                Languages
+                                Langues
                             </h4>
                             <div className="space-y-3">
                                 {resumeData.languages.map(l => (
@@ -211,70 +289,81 @@ export default function ResumeSection() {
                             </div>
                         </div>
 
-                        {/* Education */}
-                        <div className="resume-item glass-fast rounded-2xl p-7 border border-white/8">
-                            <h4 className="text-sm font-bold text-white mb-5 flex items-center gap-2 uppercase tracking-widest">
-                                <span className="w-2 h-2 bg-orange-400 rounded-full shadow-[0_0_8px_rgba(251,146,60,0.8)]" />
-                                Education
-                            </h4>
-                            {resumeData.education.map((edu, idx) => (
-                                <div key={idx}>
-                                    <p className="text-sm font-bold text-accent-cyan">{edu.school}</p>
-                                    <p className="text-sm text-gray-200 mt-0.5">{edu.degree}</p>
-                                    <p className="text-[10px] text-gray-500 mt-1 font-mono">{edu.date}</p>
-                                    <p className="text-xs text-gray-500 mt-2">{edu.detail}</p>
-                                </div>
-                            ))}
-                        </div>
                     </div>
 
                     {/* ── Right Column ── */}
                     <div className="lg:col-span-2 space-y-6">
 
+                        {/* Education */}
+                        <div className="resume-item glass-fast rounded-2xl p-7 border border-white/8">
+                            <h4 className="text-sm font-bold text-white mb-6 flex items-center gap-2 uppercase tracking-widest">
+                                <span className="w-2 h-2 bg-orange-400 rounded-full shadow-[0_0_8px_rgba(251,146,60,0.8)]" />
+                                Formations
+                            </h4>
+                            <div className="space-y-6">
+                                {resumeData.education.map((edu, idx) => (
+                                    <div key={idx} className="relative pl-6 border-l border-white/10">
+                                        <div className="absolute top-1.5 left-[-4.5px] w-[8px] h-[8px] bg-orange-400 rounded-full" />
+                                        <div className="flex flex-wrap justify-between items-start gap-1">
+                                            <h5 className="text-base font-bold text-white">{edu.degree}</h5>
+                                            <span className="text-[10px] text-gray-500 font-mono bg-white/5 px-2.5 py-0.5 rounded border border-white/10">{edu.date}</span>
+                                        </div>
+                                        <p className="text-sm font-semibold text-accent-cyan mt-0.5">{edu.school}</p>
+                                        <p className="text-xs text-gray-400 mt-1">{edu.detail}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
                         {/* Experience */}
                         <div className="resume-item glass-fast rounded-2xl p-7 border border-white/8 hover:border-blue-500/20 transition-colors">
                             <h4 className="text-sm font-bold text-white mb-7 flex items-center gap-2 uppercase tracking-widest">
                                 <span className="w-2 h-2 bg-blue-400 rounded-full shadow-[0_0_8px_rgba(96,165,250,0.8)]" />
-                                Professional Experience
+                                Expériences Professionnelles
                             </h4>
-                            {resumeData.experience.map((exp, idx) => (
-                                <div key={idx} className="relative pl-8 border-l border-white/10">
-                                    <div className="absolute top-1 left-[-5px] w-[9px] h-[9px] bg-blue-400 rounded-full shadow-[0_0_12px_rgba(96,165,250,0.7)]" />
-                                    <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
-                                        <div>
-                                            <h5 className="text-lg font-bold text-white">{exp.company}</h5>
-                                            <p className="text-accent-cyan text-sm font-medium">{exp.role}</p>
+                            <div className="space-y-8">
+                                {resumeData.experience.map((exp, idx) => (
+                                    <div key={idx} className="relative pl-8 border-l border-white/10">
+                                        <div className="absolute top-1 left-[-5px] w-[9px] h-[9px] bg-blue-400 rounded-full shadow-[0_0_12px_rgba(96,165,250,0.7)]" />
+                                        <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
+                                            <div>
+                                                <h5 className="text-lg font-bold text-white">{exp.role}</h5>
+                                                <p className="text-accent-cyan text-sm font-medium">{exp.company}</p>
+                                            </div>
+                                            <span className="text-[11px] text-gray-500 font-mono bg-white/5 px-3 py-1 rounded-full border border-white/10 whitespace-nowrap">{exp.date}</span>
                                         </div>
-                                        <span className="text-[11px] text-gray-500 font-mono bg-white/5 px-3 py-1 rounded-full border border-white/10 whitespace-nowrap">{exp.date}</span>
+                                        <ul className="space-y-2 mb-4 mt-3">
+                                            {exp.bullets.map((b, bi) => (
+                                                <li key={bi} className="flex items-start gap-2 text-sm text-gray-400">
+                                                    <span className="w-1 h-1 bg-accent-cyan rounded-full mt-2 shrink-0" />
+                                                    {b}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                        <div className="flex flex-wrap gap-1.5">
+                                            {exp.stack.map(t => (
+                                                <span key={t} className="text-[10px] px-2 py-0.5 rounded-full bg-accent-cyan/10 text-accent-cyan border border-accent-cyan/20 font-mono">{t}</span>
+                                            ))}
+                                        </div>
                                     </div>
-                                    <ul className="space-y-2 mb-4 mt-3">
-                                        {exp.bullets.map((b, bi) => (
-                                            <li key={bi} className="flex items-start gap-2 text-sm text-gray-400">
-                                                <span className="w-1 h-1 bg-accent-cyan rounded-full mt-2 shrink-0" />
-                                                {b}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    <div className="flex flex-wrap gap-1.5">
-                                        {exp.stack.map(t => (
-                                            <span key={t} className="text-[10px] px-2 py-0.5 rounded-full bg-accent-cyan/10 text-accent-cyan border border-accent-cyan/20 font-mono">{t}</span>
-                                        ))}
-                                    </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
 
-                        {/* Projects */}
+                        {/* Flagship Projects */}
                         <div className="resume-item">
                             <h4 className="text-sm font-bold text-white mb-4 flex items-center gap-2 uppercase tracking-widest">
                                 <span className="w-2 h-2 bg-pink-400 rounded-full shadow-[0_0_8px_rgba(244,114,182,0.8)]" />
-                                Key Projects
+                                Projets Phares
                             </h4>
                             <div className="space-y-4">
                                 {resumeData.projects.map((proj, idx) => (
                                     <div key={idx} className={`glass-fast rounded-2xl p-6 border transition-all duration-300 ${proj.highlight ? "border-accent-cyan/25 bg-accent-cyan/5 hover:border-accent-cyan/40" : "border-white/8 hover:border-white/15"}`}>
                                         <div className="flex items-start justify-between gap-2 mb-2">
-                                            <h5 className="text-base font-bold text-white">{proj.name}</h5>
+                                            <a href={proj.link} target="_blank" rel="noopener noreferrer" className="text-base font-bold text-white hover:text-accent-cyan transition-colors flex items-center gap-2">
+                                                {proj.name}
+                                                <svg className="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                                            </a>
                                             {proj.highlight && (
                                                 <span className="text-[9px] text-accent-cyan bg-accent-cyan/10 border border-accent-cyan/30 px-2 py-0.5 rounded-full font-mono uppercase tracking-wider shrink-0">
                                                     Flagship
@@ -291,6 +380,23 @@ export default function ResumeSection() {
                                 ))}
                             </div>
                         </div>
+
+                        {/* Personal Projects */}
+                        <div className="resume-item glass-fast rounded-2xl p-7 border border-white/8">
+                            <h4 className="text-sm font-bold text-white mb-4 flex items-center gap-2 uppercase tracking-widest">
+                                <span className="w-2 h-2 bg-indigo-400 rounded-full shadow-[0_0_8px_rgba(129,140,248,0.8)]" />
+                                Projets Personnels
+                            </h4>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                {resumeData.personalProjects.map((p, idx) => (
+                                    <div key={idx} className="bg-white/5 p-4 rounded-xl border border-white/5">
+                                        <p className="text-xs font-bold text-white mb-1">{p.name}</p>
+                                        <p className="text-[11px] text-gray-400 leading-relaxed">{p.desc}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

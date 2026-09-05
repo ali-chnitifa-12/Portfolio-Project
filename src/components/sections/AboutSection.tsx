@@ -122,20 +122,20 @@ export default function AboutSection() {
 
                                 <div className="space-y-6 text-gray-300 text-lg md:text-xl leading-relaxed font-light">
                                     <p>
-                                        I am a <span className="text-white font-medium">Junior Full-Stack Developer</span> on a mission to build high-scale, impactful web applications. My journey is defined by a deep curiosity for how the modern web works and a commitment to mastering the <span className="text-accent-cyan font-medium">React + Laravel</span> stack.
+                                        Je suis un <span className="text-white font-medium">Développeur Web Full-Stack</span> passionné par la création d'applications web modernes et performantes. Mon parcours s'appuie sur la maîtrise du stack <span className="text-accent-cyan font-medium">React + Laravel</span> et des technologies de pointe.
                                     </p>
                                     <p>
-                                        I bridge the gap between technical complexity and intuitive user experiences. Currently, I'm focusing on architecting robust REST APIs and building performant frontends that solve real-world problems. I'm actively looking for a team where I can contribute my skills and continue growing as a professional engineer.
+                                        Je conçois des API REST fiables, structure des bases de données MySQL normalisées et développe des interfaces utilisateur dynamiques et animées. Ouvert aux opportunités en junior et freelance.
                                     </p>
                                 </div>
 
                                 {/* Dynamic Skill Highlights */}
                                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-white/10 transform-style-3d parallax-depth-3">
                                     {[
-                                        { label: "Location", val: "Morocco" },
-                                        { label: "Core Stack", val: "Laravel & React" },
-                                        { label: "Learning", val: "Cloud Scaling" },
-                                        { label: "Availability", val: "Junior Roles" }
+                                        { label: "Localisation", val: "Safi, Maroc" },
+                                        { label: "Stack Principal", val: "React & Laravel" },
+                                        { label: "Formation", val: "Licence Pro GI" },
+                                        { label: "Disponibilité", val: "Junior & Freelance" }
                                     ].map((item) => (
                                         <div key={item.label} className="space-y-2 transform-style-3d">
                                             <p className="text-[10px] text-gray-500 uppercase tracking-[0.3em] font-bold">{item.label}</p>
@@ -148,16 +148,16 @@ export default function AboutSection() {
                             {/* Impact/Stats Column */}
                              <div className="lg:col-span-4 grid grid-cols-1 sm:grid-cols-3 lg:flex lg:flex-col justify-center gap-6 md:gap-8 transform-style-3d parallax-depth-3">
                                 <div className="glass-fast p-4 sm:p-8 md:p-10 rounded-2xl md:rounded-3xl border border-white/10 text-center space-y-2 group/stat hover:bg-white/5 transition-all duration-500 transform-style-3d hover:translate-z-20">
-                                    <p className="text-2xl sm:text-4xl md:text-5xl font-bold gradient-text drop-shadow-sm">3+</p>
-                                    <p className="text-[10px] md:text-xs text-gray-500 uppercase tracking-[0.2em] font-mono">Full-Stack Projects</p>
+                                    <p className="text-2xl sm:text-4xl md:text-5xl font-bold gradient-text drop-shadow-sm">6+</p>
+                                    <p className="text-[10px] md:text-xs text-gray-500 uppercase tracking-[0.2em] font-mono">Projets Web</p>
                                 </div>
                                 <div className="glass-fast p-4 sm:p-8 md:p-10 rounded-2xl md:rounded-3xl border border-white/10 text-center space-y-2 group/stat hover:bg-white/5 transition-all duration-500 transform-style-3d hover:translate-z-20">
-                                    <p className="text-2xl sm:text-4xl md:text-5xl font-bold text-accent-cyan">1+</p>
-                                    <p className="text-[10px] md:text-xs text-gray-500 uppercase tracking-[0.2em] font-mono">Year Professional XP</p>
+                                    <p className="text-2xl sm:text-4xl md:text-5xl font-bold text-accent-cyan">2+</p>
+                                    <p className="text-[10px] md:text-xs text-gray-500 uppercase tracking-[0.2em] font-mono">Certifications IBM & Google</p>
                                 </div>
                                 <div className="glass-fast p-4 sm:p-8 md:p-10 rounded-2xl md:rounded-3xl border border-white/10 text-center space-y-2 group/stat hover:bg-white/5 transition-all duration-500 transform-style-3d hover:translate-z-20">
-                                    <p className="text-2xl sm:text-4xl md:text-5xl font-bold text-accent-purple">Open</p>
-                                    <p className="text-[10px] md:text-xs text-gray-500 uppercase tracking-[0.2em] font-mono">To Work Globally</p>
+                                    <p className="text-2xl sm:text-4xl md:text-5xl font-bold text-accent-purple">Dispo</p>
+                                    <p className="text-[10px] md:text-xs text-gray-500 uppercase tracking-[0.2em] font-mono">Junior & Freelance</p>
                                 </div>
                             </div>
                         </div>

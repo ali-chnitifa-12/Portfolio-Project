@@ -15,31 +15,43 @@ import {
     SiMysql, 
     SiPostman,
     SiTypescript,
-    SiJavascript
+    SiJavascript,
+    SiPostgresql,
+    SiOpenai,
+    SiWordpress,
+    SiFramer,
+    SiN8N
 } from "react-icons/si";
-import { FaDatabase } from "react-icons/fa";
+import { FaDatabase, FaCogs } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const skills = [
     // Frontend
-    { name: "React", level: 92, color: "#61DAFB", icon: SiReact, desc: "Hooks, Context, Redux", category: "Frontend" },
+    { name: "React.js", level: 92, color: "#61DAFB", icon: SiReact, desc: "Hooks, Context, Redux", category: "Frontend" },
     { name: "Next.js", level: 90, color: "#ffffff", icon: SiNextdotjs, desc: "App Router, SSR, API", category: "Frontend" },
+    { name: "TypeScript", level: 88, color: "#3178C6", icon: SiTypescript, desc: "Static Typing, Interfaces", category: "Frontend" },
     { name: "TailwindCSS", level: 95, color: "#06B6D4", icon: SiTailwindcss, desc: "Responsive, Themes", category: "Frontend" },
     { name: "GSAP", level: 85, color: "#88CE02", icon: SiGreensock, desc: "ScrollTrigger, 3D", category: "Frontend" },
+    { name: "Framer Motion", level: 85, color: "#0055FF", icon: SiFramer, desc: "Animations, Gestures", category: "Frontend" },
     
     // Backend
-    { name: "Laravel", level: 88, color: "#FF2D20", icon: SiLaravel, desc: "PHP Framework, Eloquent", category: "Backend" },
+    { name: "Laravel", level: 88, color: "#FF2D20", icon: SiLaravel, desc: "PHP, Eloquent, Sanctum", category: "Backend" },
     { name: "Node.js", level: 85, color: "#339933", icon: SiNodedotjs, desc: "Express, APIs, Auth", category: "Backend" },
-    { name: "Express.js", level: 88, color: "#000000", icon: SiNodedotjs, desc: "RESTful APIs, Middleware", category: "Backend" },
+    { name: "Express.js", level: 88, color: "#ffffff", icon: SiNodedotjs, desc: "RESTful APIs, Middleware", category: "Backend" },
     
     // Database
-    { name: "MySQL", level: 85, color: "#4479A1", icon: SiMysql, desc: "Relational DB, Queries", category: "Database" },
+    { name: "MySQL", level: 85, color: "#4479A1", icon: SiMysql, desc: "Relational DB, Normalization", category: "Database" },
     { name: "MongoDB", level: 80, color: "#47A248", icon: SiMongodb, desc: "Mongoose, Aggregation", category: "Database" },
+    { name: "PostgreSQL", level: 78, color: "#4169E1", icon: SiPostgresql, desc: "Relational DB, Queries", category: "Database" },
+    { name: "Oracle Admin", level: 75, color: "#F80000", icon: FaDatabase, desc: "Database Administration", category: "Database" },
     
     // Tools
-    { name: "Git", level: 85, color: "#F05032", icon: SiGit, desc: "Version Control, GitHub", category: "Tools" },
+    { name: "Git & GitHub", level: 88, color: "#F05032", icon: SiGit, desc: "Version Control, Workflow", category: "Tools" },
     { name: "Postman", level: 90, color: "#FF6C37", icon: SiPostman, desc: "API Design & Testing", category: "Tools" },
+    { name: "OpenAI API", level: 85, color: "#10A37F", icon: SiOpenai, desc: "AI Integration & Prompts", category: "Tools" },
+    { name: "n8n & Workflow", level: 80, color: "#EA4B71", icon: SiN8N, desc: "Automation, Workflows", category: "Tools" },
+    { name: "WordPress", level: 78, color: "#21759B", icon: SiWordpress, desc: "CMS & Custom Themes", category: "Tools" },
 ];
 
 const categories = ["Frontend", "Backend", "Database", "Tools"];
